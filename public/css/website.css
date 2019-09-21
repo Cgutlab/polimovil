@@ -1,0 +1,5799 @@
+.ff1 {
+
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+
+
+.lh30 {
+
+    line-height: 30px;
+
+}
+
+.hoverGris{
+  color: #727284;
+}
+.hoverGris:hover{
+  color: #2B7EC1;
+}
+
+.lh34{
+
+    line-height: 34px;
+
+}
+
+
+
+.lh38{
+
+    line-height: 38px;
+
+}
+
+.card .card-image img {
+
+  width: inherit;
+
+}
+
+.collapsible-body {
+
+  padding:0;
+
+  border: 0;
+
+}
+
+
+
+.collapsible-header{
+
+  border: 0;
+
+  border-bottom: 1px solid #EFF2F7;
+
+}
+
+.ff2 {
+
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+
+
+
+
+
+
+.flex {
+
+
+
+    display: flex;
+
+
+
+}
+
+
+
+
+
+
+
+.azul {
+
+
+
+    color: #2B7EC1;
+
+
+
+}
+
+
+
+.azul2 {
+
+
+
+    color: #1F3B87;
+
+
+
+}
+
+
+
+
+
+
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+
+    background-color: transparent;
+
+    border: none;
+
+    border-bottom: 1px solid #9e9e9e;
+
+    border-radius: 0;
+
+    outline: none;
+
+    height: 3rem;
+
+    width: 100%;
+
+    font-size: 16px;
+
+    margin: 0 0 8px 0;
+
+    padding: 0;
+
+    -webkit-box-shadow: none;
+
+    box-shadow: none;
+
+    -webkit-box-sizing: content-box;
+
+    box-sizing: content-box;
+
+    -webkit-transition: border .3s, -webkit-box-shadow .3s;
+
+    transition: border .3s, -webkit-box-shadow .3s;
+
+    transition: box-shadow .3s, border .3s;
+
+    transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+
+    border-bottom: 1px solid #2B7EC1;
+
+    -webkit-box-shadow: 0 1px 0 0 #2B7EC1;
+
+    box-shadow: 0 1px 0 0 #2B7EC1;
+
+}
+
+input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
+
+    color: #2B7EC1;
+
+}
+
+input.valid:not([type]), input.valid:not([type]):focus, input.valid[type=text]:not(.browser-default), input.valid[type=text]:not(.browser-default):focus, input.valid[type=password]:not(.browser-default), input.valid[type=password]:not(.browser-default):focus, input.valid[type=email]:not(.browser-default), input.valid[type=email]:not(.browser-default):focus, input.valid[type=url]:not(.browser-default), input.valid[type=url]:not(.browser-default):focus, input.valid[type=time]:not(.browser-default), input.valid[type=time]:not(.browser-default):focus, input.valid[type=date]:not(.browser-default), input.valid[type=date]:not(.browser-default):focus, input.valid[type=datetime]:not(.browser-default), input.valid[type=datetime]:not(.browser-default):focus, input.valid[type=datetime-local]:not(.browser-default), input.valid[type=datetime-local]:not(.browser-default):focus, input.valid[type=tel]:not(.browser-default), input.valid[type=tel]:not(.browser-default):focus, input.valid[type=number]:not(.browser-default), input.valid[type=number]:not(.browser-default):focus, input.valid[type=search]:not(.browser-default), input.valid[type=search]:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid>input.select-dropdown {
+
+    border-bottom: 1px solid #2B7EC1;
+
+    -webkit-box-shadow: 0 1px 0 0 #2B7EC1;
+
+    box-shadow: 0 1px 0 0 #2B7EC1;
+
+}
+
+
+
+textarea.materialize-textarea{height: 10rem!important;}
+
+
+
+.input-field>label {
+
+    color: #9e9e9e;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    font-size: 1rem;
+
+    cursor: text;
+
+    -webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
+
+    transition: color .2s ease-out, -webkit-transform .2s ease-out;
+
+    transition: transform .2s ease-out, color .2s ease-out;
+
+    transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+
+    -webkit-transform-origin: 0% 100%;
+
+    transform-origin: 0% 100%;
+
+    text-align: initial;
+
+    -webkit-transform: translateY(12px);
+
+    transform: translateY(12px);
+
+}
+
+
+
+
+
+.carousel.carousel-slider .carousel-item {
+
+    width: 100%;
+
+    min-height: 200px;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+}
+
+
+
+.celeste {
+
+
+
+    color: #03A9F4;
+
+
+
+}
+
+.celesteH {
+
+    color: #595959;
+
+}
+
+.celesteH:hover {
+
+    color: #03A9F4;
+
+}
+
+
+
+
+
+
+
+.lineaHorizontal {
+
+
+
+    margin-bottom: 15px;
+
+
+
+    height: 2px;
+
+
+
+    width: 100%;
+
+
+
+    background: #F8BE00;
+
+
+
+}
+
+
+
+
+
+
+
+.colorPro {
+
+
+
+    color: #E01E2B;
+
+
+
+}
+
+
+
+
+
+
+
+.noPadNS {
+
+
+
+    padding-top: 0;
+
+
+
+    padding-bottom: 0;
+
+
+
+}
+
+
+
+.mt10{
+
+  margin-top: 10px;
+
+}
+
+
+
+.boton {
+
+    background: #2B7EC1;
+
+
+
+    font-size: 14px;
+
+
+
+    font-weight: 400;
+
+
+
+    color: white;
+
+
+
+    padding: 10px 50px 10px 50px;
+
+
+
+    border-radius: 4px;
+
+
+
+    letter-spacing: 0.8px;
+
+
+
+}
+
+
+
+
+
+
+
+.sidenav-active {
+
+
+
+    font-weight: bold;
+
+
+
+}
+
+
+
+
+
+
+
+.flex-justify {
+
+
+
+    justify-content: center;
+
+
+
+}
+
+
+
+
+
+
+
+.flex-align {
+
+
+
+    align-items: center;
+
+
+
+}
+
+
+
+
+
+
+
+.mostaza {
+
+
+
+    color: #F7BD25;
+
+
+
+}
+
+
+
+
+
+
+
+.rojo {
+
+
+
+    color: #E01E2B;
+
+
+
+}
+
+
+
+
+
+
+
+.bloque {
+
+     font-weight: 500;
+
+    padding: 10px 0px 10px 0px;
+
+
+
+    margin: 0px 3px 0px 3px;
+
+
+
+    /* border-bottom: 2px solid WHITE; */
+
+
+
+    color: #727284;
+
+
+
+}
+
+
+
+
+
+
+
+.mt5 {
+
+
+
+    margin-top: 5px;
+
+
+
+}
+
+
+
+
+
+
+
+.bloque:hover {
+
+     font-weight: 500;
+
+    padding: 10px 0px 10px 0px;
+
+
+
+    margin: 0px 3px 0px 3px;
+
+
+
+    /* border-bottom: 2px solid #2B7EC1; */
+
+
+
+    color: #2B7EC1;
+
+
+
+}
+
+
+
+
+
+
+
+.bloqueActive {
+
+  color: #2B7EC1;
+
+  font-weight: 600;
+
+    padding: 10px 0px 10px 0px;
+
+
+
+    margin: 0px 3px 0px 3px;
+
+
+
+    border-bottom: 2px solid white;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.bold {
+
+
+
+    font-weight: 600;
+
+
+
+}
+
+
+
+
+
+
+
+.navRojo {
+
+
+
+    color: #E01E2B;
+
+
+
+}
+
+
+
+
+
+
+
+.navRojo:hover {
+
+
+
+    color: #F7BD25;
+
+
+
+}
+
+
+
+
+
+
+
+.navBlanco {
+
+
+
+    color: #D9D9EA;
+
+
+
+    font-size: 16px;
+
+
+
+}
+
+
+
+
+
+
+
+.navBlanco:hover {
+
+
+
+    color: #1D9EE1;
+
+
+
+    font-size: 16px;
+
+
+
+}
+
+
+
+
+
+
+
+.tabs .tab a.active:focus {
+
+
+
+    background: inherit;
+
+
+
+    color: #48727B;
+
+
+
+}
+
+
+
+
+
+
+
+.tabs .tab a {
+
+
+
+    color: #48727B;
+
+
+
+}
+
+
+
+
+
+
+
+.tabs .tab a.active {
+
+
+
+    color: #48727B;
+
+
+
+}
+
+
+
+
+
+
+
+.tabs .tab a:hover {
+
+
+
+    color: #D16043;
+
+
+
+}
+
+
+
+
+
+
+
+.sideActive {
+
+
+
+    font-weight: bold;
+
+
+
+}
+
+
+
+
+
+
+
+.tabs .indicator {
+
+
+
+    position: absolute;
+
+
+
+    bottom: 0;
+
+
+
+    height: 2px;
+
+
+
+    background-color: #48727B;
+
+
+
+    will-change: left, right;
+
+
+
+}
+
+
+
+
+
+
+
+.slider .slides li .caption .hide-on-large-only p {
+
+
+
+    margin: 0;
+
+
+
+    line-height: 40px;
+
+
+
+    padding: 0;
+
+
+
+    font-size: 36px;
+
+
+
+}
+
+
+
+
+
+
+
+.slider .slides li .caption .azul p {
+
+
+
+    font-weight: 800;
+
+
+
+    color: #0058A8;
+
+
+
+}
+
+
+
+
+
+
+
+.slider .slides li .caption .gris6 p {
+
+
+
+    font-weight: 600;
+
+
+
+    color: #595959;
+
+
+
+}
+
+
+
+
+
+
+
+.hoverAmarillo:hover {
+
+
+
+    color: #25D366;
+
+
+
+}
+
+
+
+
+
+
+
+.hover:hover {
+
+
+
+    color: #D16043;
+
+
+
+}
+
+
+
+
+
+
+
+.slider .slides li .caption {
+
+
+
+    top: 40%;
+
+
+
+}
+
+
+
+
+
+
+
+.fs38 {
+
+
+
+    font-size: 38px
+
+
+
+}
+
+
+
+
+
+
+
+.fs36 {
+
+
+
+    font-size: 36px
+
+
+
+}
+
+
+
+
+
+
+
+.fs34 {
+
+
+
+    font-size: 34px
+
+
+
+}
+
+
+
+
+
+
+
+.fs32 {
+
+
+
+    font-size: 32px
+
+
+
+}
+
+
+
+
+
+
+
+.fs30 {
+
+
+
+    font-size: 30px
+
+
+
+}
+
+
+
+
+
+
+
+.fs28 {
+
+
+
+    font-size: 28px
+
+
+
+}
+
+
+
+
+
+
+
+.fs26 {
+
+
+
+    font-size: 26px
+
+
+
+}
+
+
+
+
+
+
+
+.fs24 {
+
+
+
+    font-size: 24px
+
+
+
+}
+
+
+
+
+
+
+
+.fs22 {
+
+
+
+    font-size: 22px
+
+
+
+}
+
+
+
+
+
+
+
+.fs18 {
+
+
+
+    font-size: 18px
+
+
+
+}
+
+
+
+
+
+
+
+.fw3 {
+
+
+
+    font-weight: 300
+
+
+
+}
+
+
+
+
+
+
+
+.fw4 {
+
+
+
+    font-weight: 400
+
+
+
+}
+
+
+
+
+
+
+
+.fw5 {
+
+
+
+    font-weight: 500
+
+
+
+}
+
+
+
+
+
+
+
+.fw6 {
+
+
+
+    font-weight: 600
+
+
+
+}
+
+
+
+
+
+
+
+.fw7 {
+
+
+
+    font-weight: 700
+
+
+
+}
+
+
+
+
+
+
+
+.fw8 {
+
+
+
+    font-weight: 800
+
+
+
+}
+
+
+
+
+
+
+
+.bc5 {
+
+
+
+    background-color: #FFC200 !important
+
+
+
+}
+
+
+
+
+
+
+
+/* Amarillo */
+
+
+
+.fc5 {
+
+
+
+    color: #FFC200
+
+
+
+}
+
+
+
+
+
+
+
+/* Amarillo */
+
+
+
+.fc4 {
+
+
+
+    color: #25D366
+
+
+
+}
+
+
+
+
+
+
+
+/* Amarillo */
+
+
+
+.fc3 {
+
+
+
+    color: #8A8A8A
+
+
+
+}
+
+
+
+
+
+
+
+/* Gris */
+
+
+
+.fc2 {
+
+
+
+    color: #D16143
+
+
+
+}
+
+
+
+
+
+
+
+.fc6 {
+
+
+
+    color: #47727A
+
+
+
+}
+
+
+
+
+
+
+
+.fc7 {
+
+
+
+    color: #6C6C6C
+
+
+
+}
+
+
+
+
+
+
+
+.fc8 {
+
+
+
+    color: #646464
+
+
+
+}
+
+
+
+
+
+
+
+.fs20 {
+
+
+
+    font-size: 20px;
+
+
+
+}
+
+
+
+
+
+
+
+.fs24 {
+
+
+
+    font-size: 24px;
+
+
+
+}
+
+
+
+
+
+
+
+.fs14 {
+
+
+
+    font-size: 14px;
+
+
+
+}
+
+
+
+
+
+
+
+.fc1 {
+
+
+
+    color: white;
+
+
+
+}
+
+
+
+
+
+
+
+.lts {
+
+
+
+    letter-spacing: 0.4px
+
+
+
+}
+
+
+
+
+
+
+
+header {
+
+
+
+    letter-spacing: 0.6px;
+
+
+
+}
+
+
+
+
+
+
+
+.agrupar {
+
+
+
+    float: left;
+
+
+
+}
+
+
+
+
+
+
+
+.fooHover {
+
+
+
+    color: #FFFFFF;
+
+
+
+}
+
+
+
+
+
+
+
+.fooHover:hover {
+
+
+
+    color: #FFC200;
+
+
+
+}
+
+
+
+
+
+
+
+.fooICO {
+
+
+
+    margin-right: 5px;
+
+
+
+    font-weight: 500;
+
+
+
+    color: #FFFFFF;
+
+
+
+}
+
+
+
+
+
+
+
+.fooICO:hover {
+
+
+
+    margin-right: 5px;
+
+
+
+    font-weight: 500;
+
+
+
+    color: #FFC200;
+
+
+
+}
+
+
+
+
+
+
+
+.navICO {
+
+
+
+    margin-left: 10px;
+
+
+
+    font-weight: 500;
+
+
+
+    color: #FFFFFF;
+
+
+
+}
+
+
+
+
+
+
+
+.navICO:hover {
+
+
+
+    margin-left: 10px;
+
+
+
+    font-weight: 500;
+
+
+
+    color: #D16243;
+
+
+
+}
+
+
+
+
+
+
+
+.navTXT {
+
+
+
+    margin-top: 60px;
+
+
+
+    padding-top: 20px;
+
+
+
+    padding-bottom: 20px;
+
+
+
+    font-weight: 500;
+
+
+
+}
+
+
+
+
+
+
+
+.navTXT:hover {
+
+
+
+    margin-top: 60px;
+
+
+
+    padding-top: 20px;
+
+
+
+    padding-bottom: 20px;
+
+
+
+    border-bottom: 2px solid #D16243;
+
+
+
+}
+
+
+
+
+
+
+
+.navActive {
+
+
+
+    border-bottom: 2px solid #D16243;
+
+
+
+}
+
+
+
+
+
+
+
+.bannerImage {
+
+
+
+    background: url('../../imagenes/help/home.jpg');
+
+
+
+    background-repeat: repeat;
+
+
+
+    border: 1px solid #EEEEEE;
+
+
+
+    height: 100%;
+
+
+
+    width: 100%;
+
+
+
+}
+
+
+
+
+
+
+
+.bannerTexto {
+
+
+
+    padding-top: 22px;
+
+
+
+    padding-bottom: 22px;
+
+
+
+    text-align: left;
+
+
+
+}
+
+
+
+
+
+
+
+.fondo1 {
+
+
+
+    background-color: #2A4682
+
+
+
+}
+
+
+
+
+
+
+
+.fondo2 {
+
+
+
+    background-color: #2A4682
+
+
+
+}
+
+
+
+
+
+
+
+.fondo3 {
+
+
+
+    background-color: #2A4682
+
+
+
+}
+
+
+
+
+
+
+
+/* HELPERS */
+
+
+
+.editorRico * {
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+
+
+
+
+
+.cero {
+
+
+
+    padding: 0;
+
+
+
+    margin: 0;
+
+
+
+    margin-bottom: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.vcenter {
+
+
+
+    vertical-align: middle;
+
+
+
+}
+
+
+
+
+
+
+
+.mayus {
+
+
+
+    text-transform: uppercase;
+
+
+
+}
+
+
+
+
+
+
+
+.row .col .noFooterIcon {
+
+
+
+    padding: 0;
+
+
+
+    margin: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.down10 {
+
+
+
+    margin-bottom: 10px
+
+
+
+}
+
+
+
+
+
+
+
+.Opacity1 {
+
+
+
+    opacity: 0.1;
+
+
+
+}
+
+
+
+
+
+
+
+/* LINEAS lineas / DIVISORES divisores / SEPARADORES separadores */
+
+
+
+.lineaNaranja {
+
+
+
+    width: 9%;
+
+
+
+    background-color: #F68121;
+
+
+
+    height: 2px;
+
+
+
+    margin: 12px 0;
+
+
+
+}
+
+
+
+
+
+
+
+.lineaVerde {
+
+
+
+    width: 50%;
+
+
+
+    background-color: #0D8C38;
+
+
+
+    height: 2px;
+
+
+
+    margin: 20px 0 20px 0;
+
+
+
+}
+
+
+
+
+
+
+
+.lineaNaranj2 {
+
+
+
+    width: 20%;
+
+
+
+    background-color: #F68121;
+
+
+
+    height: 2px;
+
+
+
+    margin: 12px 0 30px 0;
+
+
+
+}
+
+
+
+
+
+
+
+.sublineaNaranja {
+
+
+
+    width: 100%;
+
+
+
+    padding-bottom: 5px;
+
+
+
+    border-bottom: 2px solid #F68121;
+
+
+
+}
+
+
+
+
+
+
+
+.sublineaNegro1 {
+
+
+
+    width: 100%;
+
+
+
+    padding-bottom: 5px;
+
+
+
+    border-bottom: 1px solid #4C5050;
+
+
+
+}
+
+
+
+
+
+
+
+.fullineaVerde {
+
+
+
+    width: 100%;
+
+
+
+    padding-bottom: 2px;
+
+
+
+    border-bottom: 2px solid #0D8C38;
+
+
+
+}
+
+
+
+
+
+
+
+.fulLinearojiz1 {
+
+
+
+    width: 100%;
+
+
+
+    padding-bottom: 2px;
+
+
+
+    border-bottom: 3px solid #E9383B;
+
+
+
+}
+
+
+
+
+
+
+
+.medLinearojiz1 {
+
+
+
+    width: 35%;
+
+
+
+    padding-bottom: 2px;
+
+
+
+    border-bottom: 2px solid #E9383B;
+
+
+
+}
+
+
+
+
+
+
+
+.peqLinearojiz1 {
+
+
+
+    width: 5%;
+
+
+
+    padding-bottom: 2px;
+
+
+
+    border-bottom: 3px solid #E9383B;
+
+
+
+}
+
+
+
+
+
+
+
+.pemLinearojiz1 {
+
+
+
+    width: 10%;
+
+
+
+    padding-bottom: 2px;
+
+
+
+    border-bottom: 3px solid #E9383B;
+
+
+
+}
+
+
+
+
+
+
+
+.peqLinearojiz2 {
+
+
+
+    width: 19%;
+
+
+
+    padding-bottom: 2px;
+
+
+
+    border-bottom: 1px solid #E9383B;
+
+
+
+}
+
+
+
+
+
+
+
+.fullineaGris {
+
+
+
+    width: 100%;
+
+
+
+    padding-bottom: 2px;
+
+
+
+    margin: 20px 0 50px 0;
+
+
+
+    border-bottom: 1px solid #B0B0B0;
+
+
+
+}
+
+
+
+
+
+
+
+.medLineablanca1 {
+
+
+
+    width: 35%;
+
+
+
+    padding-bottom: 2px;
+
+
+
+    border-bottom: 2px solid white;
+
+
+
+}
+
+
+
+
+
+
+
+.DosColumnas {
+
+
+
+    -webkit-column-count: 2;
+
+
+
+    /* Chrome, Safari, Opera */
+
+
+
+    -moz-column-count: 2;
+
+
+
+    /* Firefox */
+
+
+
+    column-count: 2;
+
+
+
+    -webkit-column-gap: 40px;
+
+
+
+    /* Chrome, Safari, Opera */
+
+
+
+    -moz-column-gap: 40px;
+
+
+
+    /* Firefox */
+
+
+
+    column-gap: 40px;
+
+
+
+    ">
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/* BACKGROUND fondo*/
+
+
+
+.bcGris1 {
+
+
+
+    background: gray;
+
+
+
+}
+
+
+
+
+
+
+
+/* ESPACIOS MARGEN */
+
+
+
+.xm45 {
+
+
+
+    margin-left: 51px;
+
+
+
+}
+
+
+
+
+
+
+
+.xm5 {
+
+
+
+    margin-left: 5px;
+
+
+
+}
+
+
+
+
+
+
+
+.ym3 {
+
+
+
+    padding-top: 3px;
+
+
+
+}
+
+
+
+
+
+
+
+.ym30 {
+
+
+
+    margin-top: 30px;
+
+
+
+}
+
+
+
+
+
+
+
+.ym60 {
+
+
+
+    margin-top: 60px;
+
+
+
+}
+
+
+
+
+
+
+
+.yp10 {
+
+
+
+    padding-top: 10px;
+
+
+
+}
+
+
+
+
+
+
+
+.yp15 {
+
+
+
+    padding-top: 15px;
+
+
+
+}
+
+
+
+
+
+
+
+.yp20 {
+
+
+
+    padding-top: 20px;
+
+
+
+}
+
+
+
+
+
+
+
+.yp25 {
+
+
+
+    padding-top: 25px;
+
+
+
+}
+
+
+
+
+
+
+
+.yp35 {
+
+
+
+    padding-top: 35px;
+
+
+
+}
+
+
+
+
+
+
+
+/* HOME */
+
+
+
+.sombraletras {
+
+
+
+    text-shadow: 5px 3px 7px rgba(32, 32, 32, 0.8);
+
+
+
+}
+
+
+
+
+
+
+
+.separaletras {
+
+
+
+    letter-spacing: 1px;
+
+
+
+}
+
+
+
+
+
+
+
+/* PARRAFOS */
+
+
+
+.Justificar {
+
+
+
+    text-align: justify;
+
+
+
+}
+
+
+
+
+
+
+
+/* DESTACADOS */
+
+.efecto{
+
+  position:absolute;
+
+  opacity: 0;
+
+  /*background-color: rgba(222,32,7,0.75); */
+
+  width: 100%;
+
+  height: 100%;
+
+  z-index: 999;
+
+}
+
+
+
+#efecto{
+
+  background: #F0F0F0;
+
+  color: gray;
+
+}
+
+
+
+#efecto:hover {
+
+  background: rgba(43,126,193, 1);
+
+  opacity: 1;
+
+  color: white;
+
+  transition: 1s;
+
+}
+
+
+
+
+
+#noeffect:hover{
+
+  background: #F0F0F0;
+
+  color:#727284;
+
+}
+
+
+
+
+
+.efecto:hover{
+
+  opacity: 1;
+
+  background: rgba(0,0,0,0.4);
+
+  transition: 1s;
+
+  }
+
+/*
+
+  .efecto:hover:after{
+
+    content:'';
+
+    position: absolute;
+
+    left:0%;
+
+    right:0%;
+
+  }
+
+  .efecto:after{
+
+    bottom:0;
+
+    border-bottom:4px solid #2B7EC1;
+
+  }
+
+   */
+
+.central{
+
+  padding: inherit;
+
+  background: #2B7EC1;
+
+  /*border: 2px solid white;*/
+
+  border-radius: 50%;
+
+  display: inline-block;
+
+  position: absolute;
+
+  color: white;
+
+  width: 45px;
+
+  height: 45px;
+
+  top:50.5%;
+
+  left: 50%;
+
+  text-align: center;
+
+  transform:translate(-50%,-50%);
+
+  opacity: 1;
+
+  }
+
+
+
+.efecto i{
+
+  padding-top: 20%;
+
+  font-weight: regular;
+
+  font-size: 25px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.efecto10{
+
+  position:absolute;
+
+  opacity: 0;
+
+  color: #727284;
+
+  font-weight: 600;
+
+  /*background-color: rgba(222,32,7,0.75); */
+
+  width: 100%;
+
+  height: 100%;
+
+  z-index: 999;
+
+}
+
+
+
+#efecto10{
+
+  color: gray;
+
+}
+
+
+
+#efecto10:hover {
+
+  opacity: 1;
+
+  color: #2B7EC1;
+
+  transition: 1s;
+
+}
+
+
+
+
+
+#noeffect10:hover{
+
+  background: #F0F0F0;
+
+  color:#727284;
+
+}
+
+
+
+
+
+.efecto10:hover{
+
+  opacity: 1;
+
+  background: rgba(0,0,0,0.7);
+
+  transition: 1s;
+
+  }
+
+/*
+
+  .efecto:hover:after{
+
+    content:'';
+
+    position: absolute;
+
+    left:0%;
+
+    right:0%;
+
+  }
+
+  .efecto:after{
+
+    bottom:0;
+
+    border-bottom:4px solid #2B7EC1;
+
+  }
+
+   */
+
+.central{
+
+  padding: inherit;
+
+  background: #2B7EC1;
+
+  /*border: 2px solid white;*/
+
+  border-radius: 50%;
+
+  display: inline-block;
+
+  position: absolute;
+
+  color: white;
+
+  width: 45px;
+
+  height: 45px;
+
+  top:50.5%;
+
+  left: 50%;
+
+  text-align: center;
+
+  transform:translate(-50%,-50%);
+
+  opacity: 1;
+
+  }
+
+
+
+.efecto10 i{
+
+  padding-top: 20%;
+
+  font-weight: regular;
+
+  font-size: 25px;
+
+}
+
+
+
+/* SLIDER */
+
+
+
+.slider .indicators .indicator-item {
+
+
+
+    position: relative;
+
+
+
+    background-color: rgba(255, 255, 255, 0.5) !important;
+
+
+
+    z-index: 7;
+
+
+
+    bottom: 50px;
+
+
+
+}
+
+
+
+
+
+
+
+/* LETRAS */
+
+
+
+.tituloRojo {
+
+
+
+    color: #DE1F06
+
+
+
+}
+
+
+
+
+
+
+
+/* FUENTES FONT-FAMILY */
+
+
+
+.Roboto {
+
+
+
+    font-family: 'Roboto'
+
+
+
+}
+
+
+
+
+
+
+
+.Raleway {
+
+
+
+    font-family: 'Raleway'
+
+
+
+}
+
+
+
+
+
+
+
+.Source {
+
+
+
+    font-family: 'Source Sans Pro'
+
+
+
+}
+
+
+
+
+
+
+
+.Lato {
+
+
+
+    font-family: 'Lato'
+
+
+
+}
+
+
+
+
+
+
+
+/* COLORES COLOR color colores */
+
+
+
+.gris7 {
+
+
+
+    color: #A3A3A3;
+
+
+
+}
+
+
+
+
+
+
+
+.gris8 {
+
+
+
+    color: #6B6B6B
+
+
+
+}
+
+
+
+
+
+
+
+.gris9 {
+
+
+
+    color: #525252
+
+
+
+}
+
+
+
+
+
+
+
+.gris6 {
+
+
+
+    color: #595959
+
+
+
+}
+
+
+
+
+
+
+
+.gris11 {
+
+
+
+    color: #4C4C4C
+
+
+
+}
+
+
+
+
+
+
+
+.gris12 {
+
+
+
+    color: #707070
+
+
+
+}
+
+
+
+
+
+
+
+.gris13 {
+
+
+
+    color: #433F3F
+
+
+
+}
+
+
+
+
+
+
+
+.gris14 {
+
+
+
+    color: #585858
+
+
+
+}
+
+
+
+
+
+
+
+.gris15 {
+
+
+
+    color: #717171
+
+
+
+}
+
+
+
+
+
+
+
+.gris16 {
+
+
+
+    color: #464646
+
+
+
+}
+
+
+
+
+
+
+
+.gris17 {
+
+
+
+    color: #858585
+
+
+
+}
+
+
+
+
+
+
+
+.negro1 {
+
+
+
+    color: #000000
+
+
+
+}
+
+
+
+
+
+
+
+.negro2 {
+
+
+
+    color: #333333
+
+
+
+}
+
+
+
+
+
+
+
+.negro3 {
+
+
+
+    color: #202020
+
+
+
+}
+
+
+
+
+
+
+
+.rojo1 {
+
+
+
+    color: #DE2007
+
+
+
+}
+
+
+
+
+
+
+
+.verde1 {
+
+
+
+    color: #0D8C38
+
+
+
+}
+
+
+
+
+
+
+
+.blanc1 {
+
+
+
+    color: #FFFFFF
+
+
+
+}
+
+
+
+
+
+
+
+.blanco {
+
+
+
+    color: #FFFFFF
+
+
+
+}
+
+
+
+
+
+
+
+.orang1 {
+
+
+
+    color: #E9383B
+
+
+
+}
+
+
+
+
+
+
+
+.rojiz1 {
+
+
+
+    color: #E9383B
+
+
+
+}
+
+
+
+
+
+
+
+.ctitulos {
+
+
+
+    color: #D31B22
+
+
+
+}
+
+
+
+
+
+
+
+.ctitulo2 {
+
+
+
+    color: #2A4682
+
+
+
+}
+
+
+
+
+
+
+
+/* TAMAÑOS */
+
+
+
+.fs10 {
+
+
+
+    font-size: 10px
+
+
+
+}
+
+
+
+
+
+
+
+/* TAMAÑOS */
+
+
+
+.fs11 {
+
+
+
+    font-size: 11px
+
+
+
+}
+
+
+
+
+
+
+
+.fs12 {
+
+
+
+    font-size: 12px
+
+
+
+}
+
+
+
+
+
+
+
+.fs13 {
+
+
+
+    font-size: 13px
+
+
+
+}
+
+
+
+
+
+
+
+.fs14 {
+
+
+
+    font-size: 14px
+
+
+
+}
+
+
+
+
+
+
+
+.fs15 {
+
+
+
+    font-size: 15px
+
+
+
+}
+
+
+
+
+
+
+
+.fs16 {
+
+
+
+    font-size: 16px
+
+
+
+}
+
+
+
+
+
+
+
+.fs17 {
+
+
+
+    font-size: 17px
+
+
+
+}
+
+
+
+
+
+
+
+.fs18 {
+
+
+
+    font-size: 18px
+
+
+
+}
+
+
+
+
+
+
+
+.fs21 {
+
+
+
+    font-size: 21px;
+
+
+
+}
+
+
+
+
+
+
+
+.fs19 {
+
+
+
+    font-size: 19px
+
+
+
+}
+
+
+
+
+
+
+
+.fs20 {
+
+
+
+    font-size: 20px
+
+
+
+}
+
+
+
+
+
+
+
+.fs24 {
+
+
+
+    font-size: 24px
+
+
+
+}
+
+
+
+
+
+
+
+.fs25 {
+
+
+
+    font-size: 25px
+
+
+
+}
+
+
+
+
+
+
+
+.fs26 {
+
+
+
+    font-size: 26px
+
+
+
+}
+
+
+
+
+
+
+
+.fs28 {
+
+
+
+    font-size: 28px
+
+
+
+}
+
+
+
+
+
+
+
+.fs36 {
+
+
+
+    font-size: 36px
+
+
+
+}
+
+
+
+
+
+
+
+.fs60 {
+
+
+
+    font-size: 60px
+
+
+
+}
+
+
+
+
+
+
+
+/* HEADER */
+
+
+
+.cero .iconos {
+
+
+
+    max-height: 34px;
+
+
+
+    margin: 3px 6px 3px 6px;
+
+
+
+    vertical-align: middle;
+
+
+
+}
+
+
+
+
+
+
+
+.row .cintillo {
+
+
+
+    margin: 1px;
+
+
+
+    max-height: 140px;
+
+
+
+    vertical-align: middle;
+
+
+
+}
+
+
+
+
+
+
+
+.lheader {
+
+
+
+    margin-top: 15px;
+
+
+
+    margin: 0 10% 20 10%;
+
+
+
+    /*
+
+
+
+
+
+
+
+    padding-bottom: 67px;
+
+
+
+
+
+
+
+    border-bottom: 4px solid white;
+
+
+
+
+
+
+
+*/
+
+
+
+    line-height: 12px;
+
+
+
+}
+
+
+
+
+
+
+
+.lheader:hover {
+
+
+
+    margin-top: 15px;
+
+
+
+    background-color: inherit;
+
+
+
+    color: #E9383B;
+
+
+
+    /*
+
+
+
+
+
+
+
+    border-bottom: 4px solid #E9383B;
+
+
+
+
+
+
+
+*/
+
+
+
+}
+
+
+
+
+
+
+
+.lheader_active {
+
+
+
+    margin-top: 15px;
+
+
+
+    margin: 0 20 20 0;
+
+
+
+    /*
+
+
+
+
+
+
+
+    padding-bottom: 67px;
+
+
+
+
+
+
+
+    border-bottom: 4px solid #E9383B;
+
+
+
+
+
+
+
+*/
+
+
+
+    line-height: 12px;
+
+
+
+    color: #E9383B;
+
+
+
+}
+
+
+
+
+
+
+
+.lheader_active:hover {
+
+
+
+    background-color: inherit;
+
+
+
+}
+
+
+
+
+
+
+
+/* CALIDAD calidad */
+
+
+
+.bordes {
+
+
+
+    border: 1px solid #DDD;
+
+
+
+    border-bottom: 4px solid #F68121;
+
+
+
+}
+
+
+
+
+
+
+
+/* FLEX CONTAINER NOV */
+
+
+
+.flex-container-nov {
+
+
+
+    padding: 0;
+
+
+
+    margin: 0;
+
+
+
+    list-style: none;
+
+
+
+    display: -webkit-box;
+
+
+
+    display: -moz-box;
+
+
+
+    display: -ms-flexbox;
+
+
+
+    display: -webkit-flex;
+
+
+
+    display: flex;
+
+
+
+    flex-wrap: wrap;
+
+
+
+    -webkit-flex-flow: row wrap;
+
+
+
+    justify-content: flex-start;
+
+
+
+}
+
+
+
+
+
+
+
+/* FLEX ITEM NOV */
+
+
+
+.flex-item-nov {
+
+
+
+    justify-content: center;
+
+
+
+    background: inherit;
+
+
+
+    /* default: color; */
+
+
+
+    margin-right: 20px;
+
+
+
+    color: black;
+
+
+
+    font-weight: 600;
+
+
+
+    line-height: normal;
+
+
+
+    margin-bottom: 20px;
+
+
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width:640px) {
+
+
+
+    .flex-item-nov {
+
+
+
+        width: 100% !important;
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width:1024px) and (min-width:640px) {
+
+
+
+    .flex-item-nov {
+
+
+
+        width: 100% !important;
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+@media screen and (min-width:1024px) {
+
+
+
+    .flex-item-nov {
+
+
+
+        width: 47% !important;
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/* IMG-HOVER */
+
+
+
+.img-dest {
+
+
+
+    position: relative;
+
+
+
+    margin-bottom: 0;
+
+
+
+    padding-bottom: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.img-dest>img {
+
+
+
+    max-height: 100%;
+
+
+
+    max-width: 100%;
+
+
+
+}
+
+
+
+
+
+
+
+.capa {
+
+
+
+    position: absolute;
+
+
+
+    /*	top: 0px;*/
+
+
+
+    padding-top: 15%;
+
+
+
+    width: 100%;
+
+
+
+    height: 77.3%;
+
+
+
+    /* 77 */
+
+
+
+    background-color: rgba(36, 37, 40, 0.7);
+
+
+
+    color: white;
+
+
+
+    opacity: 0;
+
+
+
+    transition: 0.9s;
+
+
+
+    border: 1px solid black;
+
+
+
+    padding-bottom: 0;
+
+
+
+    background-image: url('{{asset('imagenes/help/more.png') }}');
+
+
+
+    background-repeat: no-repeat;
+
+
+
+}
+
+
+
+
+
+
+
+.text-centro {
+
+
+
+    top: 50%;
+
+
+
+    left: 50%;
+
+
+
+    text-align: center;
+
+
+
+    transform: translate(-50%, -50%);
+
+
+
+    padding: inherit;
+
+
+
+    display: inline-block;
+
+
+
+    position: absolute;
+
+
+
+    color: white;
+
+
+
+}
+
+
+
+
+
+
+
+.img-dest:hover .capa {
+
+
+
+    opacity: 1;
+
+
+
+    transition: 0.9s;
+
+
+
+}
+
+
+
+
+
+.box-cap {
+
+  display: flex;
+
+  justify-content: center;
+
+  position: absolute !important;
+
+  align-items: center;
+
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+
+  height: 35%;
+
+  top: 30% !important;
+
+  left: 0% !important;
+
+  bottom: 1%;
+
+  flex-wrap: wrap;
+
+  flex-direction: column;
+
+  width: 100% !important;
+
+}
+
+.box-cap2 {
+
+  display: flex;
+
+  position: absolute !important;
+
+  align-items: center;
+
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+
+  top: 20% !important;
+
+  left: 0% !important;
+
+  flex-wrap: wrap;
+
+  flex-direction: column;
+
+  width: 100% !important;
+
+}
+
+
+
+
+
+.box-bottom:hover .capa {
+
+
+
+    opacity: 1;
+
+
+
+    transition: 0.9s;
+
+
+
+}
+
+
+
+
+
+
+
+/* HOME */
+
+
+
+/* CAJAS CONTENEDORES PRODUCTOS */
+
+
+
+.flex-container {
+
+
+
+    padding: 0;
+
+
+
+    margin: 0;
+
+
+
+    list-style: none;
+
+
+
+    display: -webkit-box;
+
+
+
+    display: -moz-box;
+
+
+
+    display: -ms-flexbox;
+
+
+
+    display: -webkit-flex;
+
+
+
+    display: flex;
+
+
+
+    flex-wrap: wrap;
+
+
+
+    /*
+
+
+
+
+
+
+
+  align-content: flex-start;
+
+
+
+
+
+
+
+  */
+
+
+
+    -webkit-flex-flow: row wrap;
+
+
+
+    justify-content: space-around;
+
+
+
+}
+
+
+
+
+
+
+
+.flex-item {
+
+
+
+    justify-content: center;
+
+
+
+    background: inherit;
+
+
+
+    /* default: color; */
+
+
+
+    padding: 1px;
+
+
+
+    width: 302px;
+
+
+
+    height: auto;
+
+
+
+    /* default: 360px */
+
+
+
+    margin: 12px;
+
+
+
+    line-height: 150px;
+
+
+
+    color: white;
+
+
+
+    font-weight: bold;
+
+
+
+    font-size: 1em;
+
+
+
+    text-align: center;
+
+
+
+}
+
+
+
+
+
+
+
+.clientes-box {
+
+
+
+    margin: 0;
+
+
+
+    padding: 5px;
+
+
+
+    color: white;
+
+
+
+    border: 1px solid #DDDDDD;
+
+
+
+    background: white;
+
+
+
+}
+
+
+
+
+
+
+
+.box-bottom {
+
+
+
+    margin: 0;
+
+
+
+    padding: 5px;
+
+
+
+    border: 1px solid #DDDDDD;
+
+
+
+    background: white;
+
+
+
+}
+
+
+
+
+
+
+
+.clientes-box-img {
+
+
+
+    height: 250px;
+
+
+
+    width: 298px;
+
+
+
+    border: 1px solid #DDDDDD;
+
+
+
+}
+
+
+
+
+
+
+
+.item-description {
+
+
+
+    border-top: 7px solid green;
+
+
+
+    background: #222222;
+
+
+
+    margin: 0;
+
+
+
+    padding: 15px;
+
+
+
+    color: white;
+
+
+
+}
+
+
+
+
+
+
+
+.item-hover-img {
+
+
+
+    background: #222222;
+
+
+
+    margin: 0;
+
+
+
+    padding: 15px;
+
+
+
+    color: white;
+
+
+
+}
+
+
+
+
+
+
+
+.letras_hipervinculo {
+
+
+
+    color: white;
+
+
+
+}
+
+
+
+
+
+
+
+.letras_hipervinculo:hover {
+
+
+
+    color: white;
+
+
+
+    text-decoration: inherit;
+
+
+
+}
+
+
+
+
+
+
+
+.row {
+
+
+
+    margin-bottom: 0;
+
+
+
+    padding: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.naranja {
+
+
+
+    color: #F68121;
+
+
+
+}
+
+
+
+
+
+
+
+.fondo {
+
+
+
+    background-color: #EEEEEE;
+
+
+
+    border-top: 1px solid #CCC;
+
+
+
+    margin-top: 70px;
+
+
+
+    padding: 50px 0;
+
+
+
+}
+
+
+
+
+
+
+
+.fs36 {
+
+
+
+    font-size: 36px;
+
+
+
+}
+
+
+
+
+
+
+
+.fs32 {
+
+
+
+    font-size: 32px;
+
+
+
+}
+
+
+
+
+
+
+
+.fs26 {
+
+
+
+    font-size: 26px;
+
+
+
+}
+
+
+
+
+
+
+
+.fs20 {
+
+
+
+    font-size: 20px;
+
+
+
+}
+
+
+
+
+
+
+
+.fs18 {
+
+
+
+    font-size: 18px;
+
+
+
+}
+
+
+
+
+
+
+
+.fs17 {
+
+
+
+    font-size: 17px;
+
+
+
+}
+
+
+
+
+
+
+
+.fs16 {
+
+
+
+    font-size: 16px;
+
+
+
+}
+
+
+
+
+
+
+
+/* Header */
+
+
+
+.nav {
+
+
+
+    background-color: #4C4C4C;
+
+
+
+    font-size: 15px;
+
+
+
+    padding: 0 10%;
+
+
+
+}
+
+
+
+
+
+
+
+.nav a {
+
+
+
+    color: #DDDDDD;
+
+
+
+    padding: 0 10px;
+
+
+
+}
+
+
+
+
+
+
+
+.header {
+
+
+
+    background-color: white;
+
+
+
+    height: 130px;
+
+
+
+    padding-left: 10%;
+
+
+
+    padding-right: 10%;
+
+
+
+}
+
+
+
+
+
+
+
+.header li {
+
+
+
+    padding-top: 27px;
+
+
+
+}
+
+
+
+
+
+
+
+.header a {
+
+
+
+    color: #494949;
+
+
+
+}
+
+
+
+
+
+
+
+.header a:hover {
+
+
+
+    background-color: inherit;
+
+
+
+    color: #01A0E2;
+
+
+
+}
+
+
+
+
+
+
+
+/* Footer */
+
+
+
+footer {
+
+
+
+    background: rgb(235, 235, 235);
+
+
+
+    /* Old browsers */
+
+
+
+    background: -moz-linear-gradient(top, rgba(235, 235, 235, 1) 0%, rgba(215, 215, 215, 1) 100%);
+
+
+
+    /* FF3.6-15 */
+
+
+
+    background: -webkit-linear-gradient(top, rgba(235, 235, 235, 1) 0%, rgba(215, 215, 215, 1) 100%);
+
+
+
+    /* Chrome10-25,Safari5.1-6 */
+
+
+
+    background: linear-gradient(to bottom, rgba(235, 235, 235, 1) 0%, rgba(215, 215, 215, 1) 100%);
+
+
+
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+
+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebebeb', endColorstr='#d7d7d7', GradientType=0);
+
+
+
+    /* IE6-9 */
+
+
+
+}
+
+
+
+
+
+
+
+footer h5 {
+
+
+
+    color: #14469A;
+
+
+
+    font-size: 16px;
+
+
+
+    font-weight: bold;
+
+
+
+}
+
+
+
+
+
+
+
+footer a {
+
+
+
+    color: #444444;
+
+
+
+    font-size: 15px;
+
+
+
+}
+
+
+
+
+
+
+
+footer img {
+
+
+
+    padding: 10px;
+
+
+
+    max-width: 100%;
+
+
+
+}
+
+
+
+
+
+
+
+/* Cliente */
+
+
+
+.cliente {
+
+
+
+    text-align: center;
+
+
+
+    font-weight: bold;
+
+
+
+    height: 215px;
+
+
+
+    width: 100%;
+
+
+
+    margin-bottom: 20px;
+
+
+
+}
+
+
+
+
+
+
+
+.center {
+
+
+
+    display: flex;
+
+
+
+    justify-content: center;
+
+
+
+    align-items: center;
+
+
+
+}
+
+
+
+
+
+
+
+/* LINEA DE TIEMPO */
+
+
+
+section.timeline-section * {
+
+
+
+    margin: 0;
+
+
+
+    padding: 0;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section {
+
+
+
+    background: #525252;
+
+
+
+    font-family: Georgia, serif;
+
+
+
+    color: #fff;
+
+
+
+    font-size: 14px;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section a {
+
+
+
+    color: #fff;
+
+
+
+    text-decoration: none;
+
+
+
+    -webkit-transition: 0.5s;
+
+
+
+    -moz-transition: 0.5s;
+
+
+
+    -o-transition: 0.5s;
+
+
+
+    -ms-transition: 0.5s;
+
+
+
+    transition: 0.5s;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section a:hover,
+
+
+
+section.timeline-section a.selected {
+
+
+
+    color: #fff;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section h1, section.timeline-section h2, section.timeline-section h4, section.timeline-section h5, section.timeline-section h6 {
+
+
+
+    text-align: center;
+
+
+
+    color: #ccc;
+
+
+
+    text-shadow: #000 1px 1px 2px;
+
+
+
+    margin-bottom: 5px;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section h1 {
+
+
+
+    font-size: 18px;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section h2 {
+
+
+
+    font-size: 14px;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section .sociales {
+
+
+
+    text-align: center;
+
+
+
+    margin-bottom: 20px;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #timeline {
+
+
+
+    width: 90%;
+
+
+
+    max-width: 1000px;
+
+
+
+    height: auto;
+
+
+
+    overflow: hidden;
+
+
+
+    margin: auto;
+
+
+
+    position: relative;
+
+
+
+    background: url('../imagenes/lineadetiempo/dot.gif') left 45px repeat-x;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #dates {
+
+
+
+    width: 800px;
+
+
+
+    height: 60px;
+
+
+
+    overflow: hidden;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #dates li {
+
+
+
+    list-style: none;
+
+
+
+    float: left;
+
+
+
+    width: 100px;
+
+
+
+    height: 50px;
+
+
+
+    font-size: 20px;
+
+
+
+    text-align: center;
+
+
+
+    background: url('../imagenes/lineadetiempo/biggerdot.png') center bottom no-repeat;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #dates a {
+
+
+
+    line-height: 38px;
+
+
+
+    padding-bottom: 10px;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #dates .selected {
+
+
+
+    font-size: 38px;
+
+
+
+    font-weight: 600;
+
+
+
+    padding-bottom: 19px;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #issues {
+
+
+
+    width: 90%;
+
+
+
+    width: 1000px;
+
+
+
+    height: auto;
+
+
+
+    overflow: hidden;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #issues li {
+
+
+
+    width: 90%;
+
+
+
+    width: 1000px;
+
+
+
+    height: auto;
+
+
+
+    list-style: none;
+
+
+
+    float: left;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #issues li.selected img {
+
+
+
+    -webkit-transform: scale(1.1, 1.1);
+
+
+
+    -moz-transform: scale(1.1, 1.1);
+
+
+
+    -o-transform: scale(1.1, 1.1);
+
+
+
+    -ms-transform: scale(1.1, 1.1);
+
+
+
+    transform: scale(1.1, 1.1);
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #issues li img {
+
+
+
+    float: left;
+
+
+
+    margin: 10px 30px 10px 50px;
+
+
+
+    background: transparent;
+
+
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)";
+
+
+
+    /* IE 8 */
+
+
+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF);
+
+
+
+    /* IE 6 & 7 */
+
+
+
+    zoom: 1;
+
+
+
+    -webkit-transition: all 2s ease-in-out;
+
+
+
+    -moz-transition: all 2s ease-in-out;
+
+
+
+    -o-transition: all 2s ease-in-out;
+
+
+
+    -ms-transition: all 2s ease-in-out;
+
+
+
+    transition: all 2s ease-in-out;
+
+
+
+    -webkit-transform: scale(0.7, 0.7);
+
+
+
+    -moz-transform: scale(0.7, 0.7);
+
+
+
+    -o-transform: scale(0.7, 0.7);
+
+
+
+    -ms-transform: scale(0.7, 0.7);
+
+
+
+    transform: scale(0.7, 0.7);
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #issues li h1 {
+
+
+
+    color: #fff;
+
+
+
+    font-size: 48px;
+
+
+
+    font-weight: 500;
+
+
+
+    margin: 20px 0;
+
+
+
+    text-shadow: #000 1px 1px 2px;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #issues li p {
+
+
+
+    width: auto;
+
+
+
+    font-size: 14px;
+
+
+
+    text-align: center;
+
+
+
+    margin-right: 10%;
+
+
+
+    margin-left: 10%;
+
+
+
+    font-weight: normal;
+
+
+
+    line-height: 22px;
+
+
+
+    color: white;
+
+
+
+    /*text-shadow: #000 1px 1px 2px;*/
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #grad_left,
+
+
+
+section.timeline-section #grad_right {
+
+
+
+    width: 100px;
+
+
+
+    height: 350px;
+
+
+
+    position: absolute;
+
+
+
+    top: 0;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #grad_left {
+
+
+
+    left: 0;
+
+
+
+    background: url('../imagenes/lineadetiempo/grad_left.png') repeat-y;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #grad_right {
+
+
+
+    right: 0;
+
+
+
+    background: url('../imagenes/lineadetiempo/grad_right.png') repeat-y;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #next,
+
+
+
+section.timeline-section #prev {
+
+
+
+    position: absolute;
+
+
+
+    top: 0;
+
+
+
+    font-size: 70px;
+
+
+
+    top: 170px;
+
+
+
+    width: 22px;
+
+
+
+    height: 38px;
+
+
+
+    background-position: 0 0;
+
+
+
+    background-repeat: no-repeat;
+
+
+
+    text-indent: -9999px;
+
+
+
+    overflow: hidden;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #next:hover,
+
+
+
+section.timeline-section #prev:hover {
+
+
+
+    background-position: 0 -76px;
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #next {
+
+
+
+    right: 0;
+
+
+
+    background-image: url('../imagenes/lineadetiempo/next.png');
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #prev {
+
+
+
+    left: 0;
+
+
+
+    background-image: url('../imagenes/lineadetiempo/prev.png');
+
+
+
+}
+
+
+
+
+
+
+
+section.timeline-section #next.disabled,
+
+
+
+section.timeline-section #prev.disabled {
+
+
+
+    opacity: 0.2;
+
+
+
+}
+
+
+
+
+
+
+
+/* LINEA DE TIEMPO */
+

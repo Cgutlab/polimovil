@@ -1,0 +1,342 @@
+* table thead{font-weight: 500; color: white;}
+* table tbody{color: white;}
+:root{
+    --main-color-body-login: white;
+
+    --main-sidebar-on-section: rgba(0,0,0,0.005)!important;
+    --main-sidebar-on-article: rgba(0,0,0,0.1)!important;
+
+    --main-color-title-body: rgba(0, 137, 197, 1);
+    --main-color-title-single: purple;
+    --main-color-title-effect: purple;
+
+    --main-color-title: rgba(255,255,255,1);
+    --main-color-links: rgba(0,0,0,0.8);
+
+    --main-color-text-title: rgba(255, 255, 255, 1);
+    --main-color-text-single: purple;
+    --main-color-text-effect: purple;
+
+    --main-color-icon-single: rgba(255, 255, 255, 1);
+    --main-color-icon-effect-on: purple;
+    --main-color-icon-effect-off: purple;
+
+    --main-color-button-label: rgba(0,0,0,0.87);
+    --main-color-button-single: rgba(0, 137, 197, 0.9);
+    --main-color-button-effect: rgba(0, 137, 197, 1);
+
+    --main-color-input-label: rgba(89, 89, 93, 1);
+    --main-color-input-single: rgba(0, 0, 0, 0.2);
+    --main-color-input-default: rgba(255, 255, 255, 0.5);
+    --main-color-input-effect-on: rgba(0, 137, 197, 1);
+    --main-color-input-effect-off: rgba(237, 49, 43, 1);
+
+    --main-color-card-body: rgba(255, 255, 255, 0.3);
+    --main-color-card-border: rgba(0, 0, 0, 0.2);
+
+    --main-letra-tamano-s: 14px;
+    --main-letra-tamano-m: 16px;
+    --main-letra-tamano-l: 18px;
+}
+
+.color-title{
+  color: var(--main-color-text-title);
+}
+
+.main-btn{
+
+}
+
+.w-ful{
+  width: 100%;
+}
+
+.ml-3x{
+  margin-left: 1.5px;
+  margin-right: 1.5px;
+}
+
+.h-max-200{
+  max-height: 200px;
+}
+
+.h-max-80{
+  max-height: 80px;
+}
+
+.mt-15{
+  margin-top: 15px;
+}
+
+
+.main-bg-color-dark{
+  background: var(--main-color-body-login);
+}
+
+
+.sidenav li.only{
+    background: var(--main-sidebar-on-section)!important;
+}
+.on {
+    background: var(--main-sidebar-on-article);
+}
+
+.main-card-light{
+  border: 1px solid var(--main-color-card-border);
+  background: var(--main-color-card-body);
+  border-radius: 10px;
+  padding: 5px 35px 5px 30px;
+}
+
+/* MATERIALIZE */
+.dropdown-content{
+  top: 56px!important;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    color: var(--main-color-links);
+}
+
+.dropdown-content li>a>i, .dropdown-content li>a>i {
+    color: #000c;
+}
+
+.flex-center{
+  display:flex; justify-content:center; align-items: center;
+}
+
+.input-field {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+.row .input-field input{
+    background: var(--main-color-input-default);
+    /*
+    border: 1px solid var(--main-color-input-default);
+    */
+    border-radius: 3px;
+    padding-left:5px;
+}
+.row .input-field input .required{
+    background: var(--main-color-input-default);
+    border: 1px solid var(--main-color-input-effect-off);
+    border-radius: 3px;
+    padding-left:5px;
+}
+.row .input-field label{
+    padding-left:5px;
+    width: 35px!important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.input-field .prefix.active{
+    color: var(--main-color-input-single);
+}
+
+input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
+  color: var(--main-color-input-single);
+}
+input:not([type]):focus.valid ~ label, input[type=text]:not(.browser-default):focus.valid ~ label, input[type=password]:not(.browser-default):focus.valid ~ label, input[type=email]:not(.browser-default):focus.valid ~ label, input[type=url]:not(.browser-default):focus.valid ~ label, input[type=time]:not(.browser-default):focus.valid ~ label, input[type=date]:not(.browser-default):focus.valid ~ label, input[type=datetime]:not(.browser-default):focus.valid ~ label, input[type=datetime-local]:not(.browser-default):focus.valid ~ label, input[type=tel]:not(.browser-default):focus.valid ~ label, input[type=number]:not(.browser-default):focus.valid ~ label, input[type=search]:not(.browser-default):focus.valid ~ label, textarea.materialize-textarea:focus.valid ~ label {
+    color: var(--main-color-input-single);
+}
+input.invalid:not([type]), input.invalid:not([type]):focus, input.invalid[type=text]:not(.browser-default), input.invalid[type=text]:not(.browser-default):focus, input.invalid[type=password]:not(.browser-default), input.invalid[type=password]:not(.browser-default):focus, input.invalid[type=email]:not(.browser-default), input.invalid[type=email]:not(.browser-default):focus, input.invalid[type=url]:not(.browser-default), input.invalid[type=url]:not(.browser-default):focus, input.invalid[type=time]:not(.browser-default), input.invalid[type=time]:not(.browser-default):focus, input.invalid[type=date]:not(.browser-default), input.invalid[type=date]:not(.browser-default):focus, input.invalid[type=datetime]:not(.browser-default), input.invalid[type=datetime]:not(.browser-default):focus, input.invalid[type=datetime-local]:not(.browser-default), input.invalid[type=datetime-local]:not(.browser-default):focus, input.invalid[type=tel]:not(.browser-default), input.invalid[type=tel]:not(.browser-default):focus, input.invalid[type=number]:not(.browser-default), input.invalid[type=number]:not(.browser-default):focus, input.invalid[type=search]:not(.browser-default), input.invalid[type=search]:not(.browser-default):focus, textarea.materialize-textarea.invalid, textarea.materialize-textarea.invalid:focus, .select-wrapper.invalid>input.select-dropdown, .select-wrapper.invalid>input.select-dropdown:focus {
+    border-bottom: 1px solid var(--main-color-input-effect-off);
+    -webkit-box-shadow: 0 0px 0 0 var(--main-color-input-effect-off);
+    box-shadow: 0 0 0 0 var(--main-color-input-effect-off);
+}
+input.valid:not([type]), input.valid:not([type]):focus, input.valid[type=text]:not(.browser-default), input.valid[type=text]:not(.browser-default):focus, input.valid[type=password]:not(.browser-default), input.valid[type=password]:not(.browser-default):focus, input.valid[type=email]:not(.browser-default), input.valid[type=email]:not(.browser-default):focus, input.valid[type=url]:not(.browser-default), input.valid[type=url]:not(.browser-default):focus, input.valid[type=time]:not(.browser-default), input.valid[type=time]:not(.browser-default):focus, input.valid[type=date]:not(.browser-default), input.valid[type=date]:not(.browser-default):focus, input.valid[type=datetime]:not(.browser-default), input.valid[type=datetime]:not(.browser-default):focus, input.valid[type=datetime-local]:not(.browser-default), input.valid[type=datetime-local]:not(.browser-default):focus, input.valid[type=tel]:not(.browser-default), input.valid[type=tel]:not(.browser-default):focus, input.valid[type=number]:not(.browser-default), input.valid[type=number]:not(.browser-default):focus, input.valid[type=search]:not(.browser-default), input.valid[type=search]:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid>input.select-dropdown {
+    /*
+    border: 1px solid var(--main-color-input-effect-on);
+    */
+    -webkit-box-shadow: 0 0px 0 0 var(--main-color-input-effect-on);
+    box-shadow: 0 0 0 0 var(--main-color-input-effect-on);
+}
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    /*
+    border: 1px solid var(--main-color-input-single);
+    */
+    -webkit-box-shadow: 0 0px 0 0 var(--main-color-input-single);
+    box-shadow: 0 0 0 0 var(--main-color-input-single);
+}
+
+
+.sidenav li>a {
+    color:#000c;
+    display: block;
+    font-size: var(--main-letra-tamano-m);
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 32px;
+}
+.sidenav li a i{
+    color: var(--main-color-links);
+}
+
+.input-field>label {
+    /*
+    color: #000c;
+    text-shadow: 1px 1px 5px gray;
+    */
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    cursor: text;
+    -webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
+    transition: color .2s ease-out, -webkit-transform .2s ease-out;
+    transition: transform .2s ease-out, color .2s ease-out;
+    transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    text-align: initial;
+    -webkit-transform: translateY(12px);
+    transform: translateY(12px);
+}
+
+/* Materialize - Boton */
+.btn:focus, .btn-large:focus, .btn-small:focus, .btn-floating:focus {
+    background-color: var(--main-color-button-effect);
+}
+.btn:hover, .btn-large:hover, .btn-small:hover {
+    background-color: var(--main-color-button-effect);
+}
+.btn, .btn-large, .btn-small {
+    text-decoration: none;
+    color: white;
+    background-color: var(--main-color-button-single);
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+}
+
+#slide-out::-webkit-scrollbar {
+  width: 5px;
+}
+
+#slide-out::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 20px;
+}
+
+#slide-out::-webkit-scrollbar-track {
+  background: var(--main-color-body-login);
+  border-radius: 20px;
+}
+
+.collapsible li a{
+  cursor: pointer;
+}
+
+td, th {
+    padding: 5px 5px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 2px;
+    color: #000c;
+}
+
+ul.collapsible div.collapsible-body a{
+  padding-left: 20px;
+  font-size:  var(--main-letra-tamano-s);
+  color: var(--main-color-links);
+}
+
+.row .input-field ul li span label span{
+  color: #000c;
+}
+
+.flex-left{
+   display: flex; justify-content: left; align-items: center;
+}
+
+.sidenav li>a>i, .sidenav li>a>[class^="mdi-"], .sidenav li>a li>a, .sidenav li>a>i.material-icons {
+    float: left;
+    cursor: pointer;
+    height: 48px;
+    line-height: 48px;
+    margin: 0 32px 0 0;
+    width: 24px;
+    color: #000c;
+    margin-right: 0px;
+}
+
+ul.collapsible li a.collapsible-header span{
+    padding-left: 20px;
+}
+
+.sidenav li>a>i.material-icons span{
+    padding-left: 20px;
+}
+
+
+
+ul.collapsible.z-depth-0 li.bold{
+   background: var(--main-color-body-login);
+}
+
+ul.collapsible.z-depth-0 li.bold div.collapsible-body div a{
+    color: #000c;
+}
+
+ul.collapsible.z-depth-0 li.bold div.collapsible-body{
+    background: var(--main-color-body-login);
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    font-size: 16px;
+    color: #000c;
+    background: var(--main-color-body-login);
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+}
+
+ul.collapsible li div.collapsible-body a::before{
+    content: '»';
+    margin-left: 6px;
+    margin-right: 27px;
+}
+
+.pagination li {
+    width: 30px;
+}
+
+.pagination li.active {
+    background-color: var(--main-color-links);
+    color: var(--main-color-title-body);
+}
+.pagination li {
+    border: 1px solid var(--main-color-links);
+    color: var(--main-color-links);
+}
+.pagination li a{
+  color: var(--main-color-title);
+}
+
+/* BACKEND ADMIN */
+nav {
+    color: #fff;
+    background-color: var(--main-color-title-body);
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+}
+nav .sidenav-trigger {
+    float: left;
+    position: relative;
+    z-index: 1;
+    height: 56px;
+    margin: 0 0px;
+}
+
+@media only screen and (min-width: 601px)
+.sidenav-trigger .show-on-large {
+    height: 56px!important;
+    line-height: 56px!important;
+}

@@ -1,0 +1,341 @@
+
+
+.fondo-nav{
+	background: #2B2727;
+}
+.editorRico p{
+    padding: 0;
+    margin: 0;
+}
+.fw6{
+    font-weight: 600;
+}
+.fs34{
+    font-size: 34px;
+}
+.fw7{
+    font-weight: 700;
+}
+.gris{
+    color: #58585A;
+}
+.rojo{
+    color: #CC2128;
+}
+.flex-right{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.hoverLetras{
+    font-weight: 500;
+    color: white;
+    font-size: 14px;
+}
+.hoverLetras:hover{
+    font-weight: 700;
+}
+.collapsible{
+    border: 0;
+    margin: 0;
+    color: #585859;
+    font-size: 17px;
+    font-weight: 600;
+}
+.keyboard-focused .collapsible-header:focus{
+    background-color: white;
+}
+.collapsible-body{
+    padding: 0;
+    margin-left: 10px;
+    color: #585859;
+    font-size: 17px;
+    font-weight: 400;
+}
+.collapsible-body a{
+    padding: 2px;
+    margin: 5px 0 0 0;
+    color: #585859;
+    font-size: 17px;
+    font-weight: 400;
+}
+.collapsible-body a:hover{
+    color: #EA0024;
+}
+.collapsible-header{
+    padding: 2px;
+    color: #585859;
+    font-size: 17px;
+    font-weight: 600;
+}
+.collapsible-header a{
+    margin: 7px;
+    padding: 0;
+    color: #585859;
+    font-size: 17px;
+    font-weight: 600;
+}
+.collapsible-header a:hover{
+    color: #EA0024;
+}
+.collapsible-body>div{
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.collapsible-header>.botoneraActive{
+    color: #EA0024;
+}
+.mt-35{
+    margin-top: 35px;
+}
+.fs22{
+    font-size: 22px;
+}
+.mb-35{
+    margin-bottom: 35px;
+}
+.fs24{
+    font-size: 24px;
+}
+.pt-35{
+    padding-top: 35px;
+}
+
+.mt-50{
+    margin-top: 50px;
+}
+.mb-50{
+    margin-bottom: 50px;
+}
+
+.boton{
+    background: #58585A;
+    padding: 9px 19px 9px 19px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-between{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.fondo-wh{
+	display: flex;
+	justify-content: center;
+    height: 30px;
+    padding-top: 2px;
+}
+.fs40{font-size: 40px}
+.blanco{
+    color: white;
+}
+.slider{
+    height: 524px!important;
+}
+.slider .slides{
+    height: 524px!important;
+}
+.slider .slides li .caption p{
+    color: white;
+    text-shadow: 1px 1px black;
+    font-size: 40px;
+}
+.slider .slides li .caption{
+    top: 33%;
+    overflow: hidden;
+}
+.flex-left-center{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.slider .indicators .indicator-item{
+    bottom: 20px;
+    z-index: 99;
+        background: inherit;
+    border: 1px solid white;
+    box-shadow: 1px 1px 1px black;
+}
+.slider .indicators .indicator-item.active{
+    bottom: 20px;
+    z-index: 99;
+        background: white;
+    border: 1px solid white;
+    box-shadow: 1px 1px 1px black;
+}
+.sidenavOn{
+    font-weight: bold;
+}
+.bold{
+    font-weight: bold;
+}
+.fondo-foot{
+    background: #58585A;
+}
+.navFoot{
+
+    color: #CACAD8;
+}
+.navFoot:hover{
+    color: white;
+}
+.navFootOn{
+    color: white;
+}
+
+.footNav{
+    color: white;
+}
+.footNav:hover{
+    color: #CACAD8;
+}
+.footNavOn{
+    color: #CACAD8;
+}
+
+.fw5{
+    font-weight: 500;
+}
+.fw6{
+    font-weight: 600;
+}
+
+.navBoton{
+    padding: 0 0 0 0;
+    background: #2B2727;
+    font-weight: 400;
+    width: 100px;
+    text-align: center;    
+    color: white;
+}
+.navBoton:hover{
+    padding: 0 0 0 0;
+    background: #2B2727;
+    font-weight: 700;
+    width: 100px;
+    text-align: center;
+    color: white;
+}
+.navOn{
+    padding: 0 0 0 0;
+    background: #2B2727;
+    font-weight: 700;
+    color: white;
+    width: 100px;
+    text-align: center;    
+}
+
+.fondo-w3h:after {
+    content: '';
+    position: absolute;
+    top: 0; left: 80%;
+    border-top: 30px solid #2B2727;
+    border-right: 30px solid #CC2128;
+    width: 0;
+}
+
+.flex{
+    display: flex;
+}
+.w280{
+	width: 280px;
+}
+.flexj-center{
+	display: flex;
+	justify-content: center;
+}
+.mb-0{
+	margin-bottom: 0;
+}
+.ml-3{
+    margin-left: 3px;
+}
+.ml-7{
+    margin-left: 7px;
+}
+.fs16{
+    font-size: 16px;
+}
+.fs14{
+    font-size: 14px;
+}
+.fs13{
+    font-size: 13px;
+}
+
+
+#noFormat>form .no-class>input:not([type]), #noFormat>input[type=text]:not(.browser-default), #noFormat>input[type=password]:not(.browser-default), #noFormat>input[type=email]:not(.browser-default), #noFormat>input[type=url]:not(.browser-default), #noFormat>input[type=time]:not(.browser-default), #noFormat>input[type=date]:not(.browser-default), #noFormat>input[type=datetime]:not(.browser-default), #noFormat>input[type=datetime-local]:not(.browser-default), #noFormat>input[type=tel]:not(.browser-default), #noFormat>input[type=number]:not(.browser-default), #noFormat>input[type=search]:not(.browser-default), #noFormat>textarea.materialize-textarea {
+/*NORMAL*/
+    height: 32px;
+    background: white;
+    border: 0;
+    padding: 5px 0 0 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    width: 100%;
+}
+#noFormat>form .no-class>input:not([type]):focus:not([readonly]), #noFormat>input[type=text]:not(.browser-default):focus:not([readonly]), #noFormat>input[type=password]:not(.browser-default):focus:not([readonly]), #noFormat>input[type=email]:not(.browser-default):focus:not([readonly]), #noFormat>input[type=url]:not(.browser-default):focus:not([readonly]), #noFormat>input[type=time]:not(.browser-default):focus:not([readonly]), #noFormat>input[type=date]:not(.browser-default):focus:not([readonly]), #noFormat>input[type=datetime]:not(.browser-default):focus:not([readonly]), #noFormat>input[type=datetime-local]:not(.browser-default):focus:not([readonly]), #noFormat>input[type=tel]:not(.browser-default):focus:not([readonly]), #noFormat>input[type=number]:not(.browser-default):focus:not([readonly]), #noFormat>input[type=search]:not(.browser-default):focus:not([readonly]), #noFormat>textarea.materialize-textarea:focus:not([readonly]){
+/*FOCUS*/
+    height: 32px;
+    background: white;
+    border: 0;
+    padding: 5px 0 0 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    width: 100%;
+}
+
+
+form .no-class>input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+/*NORMAL*/
+    height: 30px;
+    background: #CC2128;
+    border: 0;
+    padding: 5px 0 0 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: black;
+    width: 105px;
+}
+form .no-class>input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+/*FOCUS*/
+    height: 30px;
+    background: #CC2128;
+    border: 0;
+    padding: 5px 0 0 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: black;
+    width: 105px;
+}
+
+
+.pagination li {
+    width: 30px;
+}
+
+.pagination li.active {
+    background-color: #EA0024;
+    color: white;
+    font-weight: bold;
+}
+.pagination li {
+    border: 1px solid #58585A;
+    color: #58585A;
+}
+.pagination li a{
+  color: #58585A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
