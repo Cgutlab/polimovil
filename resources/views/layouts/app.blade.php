@@ -29,8 +29,8 @@
 	<div class="pre-nav azul-principal" style="border-bottom: 1px solid #4dadd7;">
 		<div class="container d-flex  justify-content-between align-items-center">
 			<div class="">			
-				<a href="https://wa.me/{{$whatsapp2->route}}" class="color-white font-weight-bold">
-					<img src="{{asset('img/help/whatsapp1.png')}}" style="background-color: #00618a;" class="p-2"> 011 2188 1903
+				<a href="https://wa.me/{{$whatsapp2->route}}" class="" style="color: #fdfdfd; font-size: 16px; font-weight: 500;">
+					<img src="{{asset('img/help/whatsappPrenav.png')}}" style="background-color: #00618a;" class="p-2"> 011 2188 1903
 				</a>
 			</div>
 			<div class="d-flex align-items-center">
