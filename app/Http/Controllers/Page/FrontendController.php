@@ -8,6 +8,8 @@ use App\Http\Requests\ContactoRequest;
 use App\Data;
 use App\Logo;
 use App\Slider;
+use App\Uso;
+use App\Descarga;
 use App\Producto_familia;
 use App\Producto;
 use App\Producto_imagen;
@@ -35,7 +37,8 @@ class FrontendController extends Controller
         $sliders = Slider::where('section', 'home')->orderBy('order')->get();
         $products = Producto::where('outstanding', 'on')->orderBy('updated_at', 'desc')->take(4)->get();
         $contents = Content::where('section', 'home')->orderBy('order')->get();
-        return view('page.home', compact('sliders', 'products', 'contents'));
+        $familias = Producto_familia::orderBy('order')->where('id', '<>', 0)->where('family_id', 0)->get();
+        return view('page.home', compact('sliders', 'products', 'contents', 'familias'));
     }
 
     /**
@@ -49,7 +52,13 @@ class FrontendController extends Controller
         $sliders = Slider::where('section', 'empresa')->orderBy('order')->get();
         return view('page.empresa', compact('content', 'sliders'));
     }
+    public function productos_art($id)
+    {
+        $keypad = Producto_familia::orderBy('order')->where('id', '<>', 0)->get();
 
+        $active = Producto::find($id);
+        return view('page.producto', compact('keypad', 'active'));
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -66,20 +75,30 @@ class FrontendController extends Controller
     {
         $keypad = Producto_familia::orderBy('order')->where('id', '<>', 0)->get();
         $active = Producto_familia::find($id);
-
         $familias = Producto_familia::orderBy('order')->where('family_id', $active->id)->get();
         $productos = Producto::orderBy('order')->where('family_id', $id)->get();
         return view('page.subfamilias', compact('familias', 'productos', 'active', 'keypad'));
     }
 
-    public function productos_art($id)
-    {
+    public function usoYAplicaciones(){
+        $usos = Uso::orderBy('order')->get();
+        return view('page.uso-y-aplicaciones', compact('usos'));
+    }
+    public function ObtenerusoYAplicacion($id){
         $keypad = Producto_familia::orderBy('order')->where('id', '<>', 0)->get();
-
-        $active = Producto::find($id);
-        return view('page.producto', compact('keypad', 'active'));
+        $active = Producto_familia::find($id);
+        $uso = Uso::find($id);
+        return view('page.uso-y-aplicacion-detalle', compact('uso', 'keypad', 'active'));
     }
 
+    public function solicitarPresupuesto(){
+        return view('page.solicitar-presupuesto');
+    }   
+
+    public function descargas(){
+        $descarga = Descarga::first();
+        return view('page.descargas', compact('descarga'));
+    }
 
     public function distribuidoresmap()
     {
@@ -96,7 +115,7 @@ class FrontendController extends Controller
     public function novedades()
     {
         $novedades = Novedad_categoria::orderBy('order')->get();
-        $article = Novedad_articulo::orderBy('order')->get();
+        $article = Novedad_articulo::all();
         return view('page.novedades', compact('novedades', 'article'));
     }
 
@@ -104,7 +123,7 @@ class FrontendController extends Controller
     {
         $novedades = Novedad_categoria::orderBy('order')->get();
         $active = Novedad_categoria::find($id);
-        $article = Novedad_articulo::orderBy('order')->where('novedad_id', $id)->get();
+        $article = Novedad_articulo::where('novedad_id', $id)->get();
         return view('page.novedades', compact('novedades', 'article', 'active'));
     }
 

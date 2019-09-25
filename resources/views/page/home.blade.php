@@ -1,92 +1,95 @@
 @extends('layouts.app')
-
-@section('title')
-
-Home
-
-@endsection
-
+@section('title', 'Home')
 @section('content')
-
-  <div class="slider">
-    <ul class="slides">
-    @foreach($sliders as $sd)
-      <li>
-        <img src="{!!asset('img/slider/'.$sd->image)!!}">
-        <div class="caption right-align">
-          <h3 class="editorRico sd blanco fs40">{!!$sd->text_es!!}</h3>
-        </div>
-      </li>
-    @endforeach
-    </ul>
-  </div>
-
-	<div class="container" style="width: 87%;">
-	<div class="center-align fs34 fw6 gris mt-35 mb-35">PRODUCTOS DESTACADOS</div>
-	<div class="row">
-	@foreach($products as $dest)
-
-	<div class="col s12 m6 l3">
-		<div style="display: flex; justify-content: center; align-items: center;">
-		<a href="{{route('productos.art', $dest->id)}}">
-		<div class="card center-align" style="width: 211px;">
-			<div class="card-action" style="padding: 0 0 0 0;">
-				<div style="background-image: url({{asset('img/help/article.jpg')}});background-repeat: no-repeat; background-size: cover; height: 38px; margin-bottom: 0; padding-bottom: 0;">
-					<div class="row mb-0">
-						<div class="col s6">
-							
-						</div>
-						<div class="col s6">
-							<span class="flex-center blanco fw6" style="height: 30px; padding-top: 5px;">
-							Art. {!!$dest->code!!}
-							</span>
+<div id="sliderHome" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+		@php $count = 0; @endphp
+		@foreach($sliders as $sd)
+		@if($count == 0)
+		<li data-target="#sliderHome" data-slide-to="{{$count}}" class="active"></li>
+		@else
+		<li data-target="#sliderHome" data-slide-to="{{$count}}"></li>
+		@endif
+		@php $count++; @endphp
+		@endforeach
+	</ol>
+	<div class="carousel-inner">
+		@php $count = 0; @endphp
+		@foreach($sliders as $sd)
+			@php $count++; @endphp
+			@if($count == 1)
+				<div class="carousel-item active">
+					<img src="{!!asset('img/slider/'.$sd->image)!!}">
+					<div class="carousel-caption d-none d-md-block">
+						<h1 style="color: #33509e;">{!!$sd->text_es!!}</h1>
+					</div>
+				</div>
+			@else
+				<div class="carousel-item">
+					<img src="{!!asset('img/slider/'.$sd->image)!!}">
+					<div class="carousel-caption d-none d-md-block">
+						<h1 style="color: #35529C;">{!!$sd->text_es!!}</h1>
+					</div>
+				</div>		
+			@endif
+		@endforeach
+	</div>
+</div>
+<section class="usos-aplicaciones p-5" style="background-color: #f1f1f1; padding-bottom: 90px !important;">
+	<div class="container">
+		<h2 class="text-center mb-5" style="color: #777777;">USOS Y APLICACIONES</h2>
+		<div class="row">
+			@foreach($familias as $fam)
+				<div class="col-sm-12 col-md-4 col-lg-3 mb-3">
+					<div style="display: flex; justify-content: center; align-items: center;">
+						<div class="card w-100">					
+							<div class="position-relative" style="">
+								@if(file_exists(public_path().'/img/producto_familia/'.$fam->image))
+									<img class="img-fluid mb-2 w-100" src="{!!asset('img/producto_familia/'.$fam->image)!!}">
+								@else
+									<img class="img-fluid mb-2 w-100" src="{!!asset('img/logo/'.$default->image)!!}">
+								@endif
+								<div class="position-absolute capa-product" style="bottom: 15px;">
+									<a href="{{route('productos.sub', ['id' => $fam->id])}}"><i class="fas fa-plus"></i> ver más</a>							
+								</div>
+							</div>
+							<p class="card-content editorRico blanco text-center" style="font-weight: 700; color: #868686;">
+								{!!$fam->title_es!!}
+							</p>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="card-image" style="background: #E5E5E9; height: 211px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-				@forelse($dest->images as $imgdest)
-					@if(file_exists(public_path().'/img/gallery/'.$imgdest->image))
-						<img src="{!!asset('img/gallery/'.$imgdest->image)!!}">
-					@else
-						<img src="{!!asset('img/logo/'.$default->image)!!}">
-					@endif
-					@break
-					@empty
-					<img src="{!!asset('img/logo/'.$default->image)!!}">
-				@endforelse
-			</div>
-			<div class="card-content editorRico blanco fw6 left-align" style="background: #58585A; padding: 10px; height: 85px; overflow: hidden;">
-				{!!$dest->title_es!!}
-			</div>
-		</div>
-		</a>
-		</div>
+			@endforeach
+		</div>		
 	</div>
+</section>
+@foreach($contents as $content)
+	@if($content->order == 'AA')
+		<section class="linea-mas-completa pt-5 pb-5" style='background-image: url();'>
+			<div class="container pt-4 pb-4">
+				<div class="row justify-content-between position-relative">
+					<div class="col-sm-12 col-md-6 col-lg-7">
+						<h2 class="mb-3" style="color: #0088c7;">{{$content->title_es}}</h2>
+						<div class="" style="color: #666666; font-weight: 700;">{!! $content->text_es !!}</div>
+						<a href="{{route('productos.fam')}}" class="btn mt-3 color-white pr-4 pl-4" style="background-color: #0088c7;">Ver Productos</a>
+					</div>
+					<img src='{{asset("img/content/$content->image1")}}' alt="" class="position-absolute d-sm-none d-md-block col-md-4 img-fluid" style="right: 0; bottom: -10px; max-height: 330px;">	
+				</div>
+			</div>
+		</section>
+	@else
+		<section class="linea-mas-completa pt-5 pb-5" style='background-image: url({{asset("img/content/$content->image1")}});'>
+			<div class="container p-5">
+				<div class="row justify-content-between position-relative">
+					<div class="col-sm-12 text-center">
+						<h1 class="color-white" style="font-weight: 900;">{{$content->title_es}}</h1>
+						<h5 class="mb-4" style="color: #bbbbbb;">{!! $content->text_es !!}</h5>
+						<a href="{{route('solicitar-presupuesto')}}" class="btn btn-primary pl-4 pr-4">Ingresar</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	@endif
+@endforeach
 
-	@endforeach
-	</div>
-	<div class="center-align mt-50 mb-50"><a class="boton" href="{{route('productos.fam')}}">VER MÁS</a></div>
-	</div>
-
-	<div class="pt-35" style="background: #E7052D;">
-	<div class="center-align fs24 fw6 blanco container pt-35">CALIDAD, SEGURIDAD Y PRODUCCIÓN</div>
-	<div class="row container mb-0" style="width: 87%; padding-bottom: 90px;">
-	@foreach($contents as $cont)
-		<div class="col l3 m6 s12">
-			<div class="center-align pt-35">
-				@if(file_exists(public_path().'/img/content/'.$cont->image1))
-					<img src="{!!asset('img/content/'.$cont->image1)!!}">
-				@else
-					<img src="{!!asset('img/logo/'.$default->image)!!}">
-				@endif
-			</div>
-			<div class="center-align blanco fw6">
-				{!!$cont->title_es!!}
-			</div>
-		</div>
-	@endforeach
-	</div>
-	</div>
 @endsection
-

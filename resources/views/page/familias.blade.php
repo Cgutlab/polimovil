@@ -1,37 +1,40 @@
 @extends('layouts.app')
-
-@section('title')
-
-Familias
-
-@endsection
-
+@section('title', 'Productos')
 @section('content')
-
-<div class="container mt-35" style="width: 65%;">
-<div class="row center-align">
-	@foreach($familias as $fam)
-	<div class="col s12 m6 l4 mt-35">
-		<div style="display: flex; justify-content: center; align-items: center;">
-		<div class="card center-align" style="width: 211px;">
-		<a href="{{route('productos.sub', ['id' => $fam->id])}}">
-			<div class="center-align" style="background: #E5E5E9; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-					@if(file_exists(public_path().'/img/producto_familia/'.$fam->image))
-						<img class="responsive-img" src="{!!asset('img/producto_familia/'.$fam->image)!!}">
-					@else
-						<img class="responsive-img" src="{!!asset('img/logo/'.$default->image)!!}">
-					@endif
-			</div>
-			<div class="card-content editorRico blanco fw7" style="background-image: url({{asset('img/help/article.jpg')}});background-repeat: no-repeat; background-size: cover; height: 56px; margin: 0; display: flex; justify-content: center; align-items: center;">
-				{!!$fam->title_es!!}
-			</div>
-		</a>
-		</div>
-		</div>
+<section class="productos">
+	<div class="header">
+		<div class=" d-flex align-items-end container" style="min-height: 80px">
+			<h1 class="mb-0 font-weight-bold">Productos</h1>
+		</div>	
 	</div>
-	@endforeach
-</div>
-</div>
+	<div class="container pt-5 pb-5">
+		<div class="row pt-3 pb-3">
+			@foreach($familias as $fam)
+				<div class="col-sm-12 col-md-4 col-lg-3 mb-3">
+					<div style="display: flex; justify-content: center; align-items: center;">
+						<div class="card w-100">					
+							<div class="position-relative" style="">
+								@if(file_exists(public_path().'/img/producto_familia/'.$fam->image))
+									<img class="img-fluid mb-2 w-100" src="{!!asset('img/producto_familia/'.$fam->image)!!}">
+								@else
+									<img class="img-fluid mb-2 w-100" src="{!!asset('img/logo/'.$default->image)!!}">
+								@endif
+								<div class="position-absolute capa-product" style="bottom: 15px;">
+									<a href="{{route('productos.sub', ['id' => $fam->id])}}"><i class="fas fa-plus"></i> ver más</a>							
+								</div>
+							</div>
+							<p class="card-content editorRico blanco text-center" style="font-weight: 700; color: #868686;">
+								{!!$fam->title_es!!}
+							</p>
+						</div>
+					</div>
+				</div>
+			@endforeach
+		</div>		
+	</div>
+
+</section>
+
 
 @endsection
 

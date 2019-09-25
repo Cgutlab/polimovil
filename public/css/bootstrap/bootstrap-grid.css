@@ -1019,7 +1019,7 @@ html {
   display: inline-flex !important;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 100px) {
   .d-sm-none {
     display: none !important;
   }

@@ -1,43 +1,50 @@
 @extends('layouts.app')
-
-@section('title')
-
-Novedades
-
-@endsection
-
+@section('title', 'Novedades')
 @section('content')
-
-<div class="container mt-35" style="width: 87%; padding-top: 35px;">
-<div class="row">
-<div class="col l3 s12 right">
-<div class="col s12 gris fs18 fw7" style="border-bottom: 2px solid #58585A; padding: 0 0 7px 0; margin: 0;">CATEGORÍAS</div>
-@foreach($novedades as $fam)
-	<a class="gris fs18 fw5" style="padding: 0; margin: 0; @if(isset($active) && $active->id == $fam->id) font-weight: 700; @endif" href="{{route('novedades.cat', $fam->id)}}">{!!$fam->title_es!!}</a><br>
-@endforeach
-<a class="gris fs18 fw5" style="padding: 0; margin: 0; {{(\Request::is('novedades/categorias')?'font-weight: 700;':'')}}" href="{{route('novedades')}}">Todos</a><br>
-</div>
-<div class="col l9 s12">
-	<a class="fw7 gris" href="{{route('novedades')}}">NOVEDADES</a>
-	|
-	<a class="fw7 gris" href="{{route('novedades.cat', $active->category->id)}}">{{strtoupper($active->category->title_es)}}</a>
-	|
-	<span class="fw7 gris">{{strtoupper($active->title_es)}}</span><br>
-	<div style="margin-top: 10px;">
-	@if(file_exists(public_path().'/img/novedad_articulo/'.$active->image))
-		<img class="responsive-img" src="{!!asset('img/novedad_articulo/'.$active->image)!!}">
-	@else
-		<img class="responsive-img" src="{!!asset('img/logo/'.$default->image)!!}">
-	@endif
+<div class="header mb-3">
+	<div class=" d-flex align-items-end container" style="min-height: 80px">
+		<h1 class="mb-0" style="font-weight: 800;">Novedades</h1>
+	</div>	
+</div>	
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<a class="" style="color: #666666; font-weight: 500;" href="{{route('novedades')}}">NOVEDADES</a>
+			<span>|</span>
+			<a class="" style="color: #666666; font-weight: 500;" href="{{route('novedades.cat', $active->category->id)}}">{{strtoupper($active->category->title_es)}}</a>
+			<span>|</span>
+			{{-- <span class="" style="color: #666666;">{{strtoupper($active->title_es)}}</span><br> --}}
+		</div>
 	</div>
-	<div class="fw7" style="">
-		<div class="rojo">{!!$active->title_es!!}</div>
-		<div class="gris fw5">{!!$active->text_es!!}</div>
+	<div class="row justify-content-between novedades mb-5">
+		<div class="col-sm-12 col-md-8 mt-4 mb-5">
+			<div style="border-bottom: 3px solid #0088c7;">
+				<span class="pt-2 pl-4 pr-4" style="color: #33509e; background-color: #f2f2f2; font-size: 16px; font-weight: 500;
+    padding-bottom: 3px;">{!!$active->category->title_es!!}</span>
+			</div>
+			<div style="margin-top: 10px;">
+				@if(file_exists(public_path().'/img/novedad_articulo/'.$active->image))
+				<img class="img-fluid w-100 mb-4" src="{!!asset('img/novedad_articulo/'.$active->image)!!}">
+				@else
+				<img class="img-fluid w-100 mb-4" src="{!!asset('img/logo/'.$default->image)!!}">
+				@endif
+			</div>
+			<div class="articulo-descripcion">{!!$active->text_es!!}</div>
+			<div>
+				<a href="" class="d-inline-block mt-3 mb-3" style="font-size: 20px; font-weight: 600;">
+					<img src="{{'/img/help/descarga.png'}}" alt="" class="img-fluid"> 
+					<span style="color: #3f5aa4; font-size: 18px; font-weight: 600;">Descagar</span> 
+				</a>
+			</div>			
+		</div>
+		<div class="col-sm-12 col-md-4 col-lg-3 novedades-sidebar">
+			<h4 class="pl-3 pb-3 mb-3" style="color: #33509e; font-weight: 600;">Categorías</h4>
+			@foreach($novedades as $fam)
+			<a class="" style="@if(isset($active) && $active->id == $fam->id) font-weight: 700; @endif" href="{{route('novedades.cat', $fam->id)}}"><i class="fas fa-angle-double-right"></i> {!!$fam->title_es!!}</a><br>
+			@endforeach
+			<a class="gris fs18 fw5" style="{{(\Request::is('novedades/categorias')?'font-weight: 700;':'')}}" href="{{route('novedades')}}"><i class="fas fa-angle-double-right"></i> Todos</a><br>
+		</div>
 	</div>
 </div>
-
-</div>
-</div>
-
 @endsection
 

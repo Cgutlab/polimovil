@@ -34,12 +34,13 @@ class AppServiceProvider extends ServiceProvider
         $headband  = Logo::where('type','header')->first();
         $footband  = Logo::where('type','footer')->first();
 
-        $location  = Data::where('type','address')->first();
-        $phone     = Data::where('type','phone')->first();
-        $email     = Data::where('type','email')->first();
+        $location  = Data::where('type','direccion')->first();
+        $telefono1 = Data::where('type','telefono1')->first();
+        $telefono2 = Data::where('type','telefono2')->first();
+        $email     = Data::where('type','correo')->first();
         $website   = Data::where('type','website')->first();
-        $whatsapp1 = Data::where('type','whatsapp1')->first();
-        $whatsapp2 = Data::where('type','whatsapp2')->first();
+        $whatsapp1 = Data::where('type','whatsapp')->first();
+        $whatsapp2 = Data::where('type','whatsappFlotante')->first();
         $info      = Data::where('type','info_contacto')->first();
         $map       = Data::where('type','info_google')->first();
 
@@ -51,7 +52,6 @@ class AppServiceProvider extends ServiceProvider
         'headband'  => $headband,
         'footband'  => $footband,
         'location'  => $location,
-        'phone'     => $phone,
         'email'     => $email,
         'website'   => $website,
         'whatsapp1' => $whatsapp1,
@@ -59,6 +59,8 @@ class AppServiceProvider extends ServiceProvider
         'info'      => $info,
         'map'       => $map,
         'redes'     => $redes,
+        'telefono1' => $telefono1,
+        'telefono2' => $telefono2,
         ]);
     }
 }

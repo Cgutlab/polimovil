@@ -1,112 +1,68 @@
 @extends('layouts.app')
-
-@section('title')
-
-Familias
-
-@endsection
-
+@section('title', 'Familias')
 @section('content')
-
-<div class="container mt-35" style="width: 87%;">
-<div class="row">
-<div class="col l3 m4 s12">
-<ul class="collapsible z-depth-0">
-	@foreach($keypad->sortBy('order') as $keyp) {{-- familias --}}
-	@if($keyp->family_id == 0)
-	<li @if($keyp->id == $active->id || $keyp->id == $active->family_id) class="active" @endif>
-		<div class="collapsible-header">
-			<a class="" href="{!!route('productos.sub', $keyp->id)!!}" @if($keyp->id == $active->id || $keyp->id == $active->family_id) style="color: #CC2128;" @endif>{!!$keyp->title_es!!}</a>
-		</div>
-		<div class="collapsible-body accordion">
-		<ul class="collapsible z-depth-0">
-			@foreach($keyp->familias->sortBy('order') as $sub) {{-- subfamilias --}}
-			<li @if($sub->id == $active->id) class="active" @endif>
-				<div class="collapsible-header" style="border-bottom: 0;">
-					<a href="{!!route('productos.sub', $sub->id)!!}" @if($sub->id == $active->id) style="color: #CC2128;" @endif>{!!$sub->title_es!!}</a>
-				</div>
-				<div class="collapsible-body" style="border-bottom: 0;">
-				@foreach($sub->producto->sortBy('order') as $subitem) {{-- productos --}}
-					<div><a href="{!!route('productos.art', $subitem->id)!!}">{!!$subitem->title_es!!}</a></div>
-				@endforeach
-				</div>
-			</li>
-			@endforeach
-		</ul>
-		@foreach($keyp->producto->sortBy('order') as $item) {{-- productos --}}
-			<div><a href="{!!route('productos.art', $item->id)!!}">{!!$item->title_es!!}</a></div>
-		@endforeach
-		</div>
-	</li>
-	@endif
-	@endforeach
-</ul>
+<div class="header">
+	<div class=" d-flex align-items-end container" style="min-height: 80px">
+		<a href="{{route('productos.fam')}}" class="mb-0 font-weight-bold d-block" style="line-height: 58px;"><i class="fas fa-angle-double-left"></i> Volver</a>
+	</div>	
 </div>
-<div class="col l9 m8 s12">
-	@foreach($productos as $article)
-	<div class="col s12 m6 l3">
-		<div style="display: flex; justify-content: center; align-items: center;">
-		<div class="card center-align" style="width: 350px;">
-		<a href="{{route('productos.art', ['id' => $article->id])}}">
-			<div class="card-action" style="padding: 0 0 0 0;">
-				<div style="background-image: url({{asset('img/help/article.jpg')}});background-repeat: no-repeat; background-size: cover; height: 38px; margin-bottom: 0; padding-bottom: 0;">
-					<div class="row mb-0">
-						<div class="col s6">
-							
-						</div>
-						<div class="col s6">
-							<span class="flex-center blanco fw6" style="height: 30px; padding-top: 5px;">
-							Art. {!!$article->code!!}
-							</span>
+<div aria-label="breadcrumb" class="container mt-3">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{route('productos.fam')}}" style="font-weight: 500; color: #737373;">Productos</a></li>
+    <li class="breadcrumb-item active" aria-current="page" style="font-weight: 500; color: #737373;">Industrial</li>
+  </ol>
+</div>
+<div class="container pt-5 pb-5 rp-movil">
+	<div class="row align-items-start rOrderMovil">
+		<div class="col-sm-12 col-md-4 col-lg-3 mb-4">
+			@include('page.partials.sidebar-collapse')
+		</div>
+		<div class="col-sm-12 col-md-8 col-lg-9 row mx-auto">
+			@foreach($productos as $article)
+			<div class="col-sm-12 col-md-4 mb-3" >
+				<div class="card w-100 mb-4">
+					<div class="position-relative mb-3">
+						@forelse($article->images as $imgdest)
+							@if(file_exists(public_path().'/img/gallery/'.$imgdest->image))
+								<img class="img-fluid w-100" style="border: 1px solid #dadada;" src="{!!asset('img/gallery/'.$imgdest->image)!!}">
+							@else
+								<img class="img-fluid w-100" style="border: 1px solid #dadada;" src="{!!asset('img/logo/'.$default->image)!!}">
+							@endif
+							@break
+						@empty
+							<img src="{!!asset('img/logo/'.$default->image)!!}">
+						@endforelse
+						<div class="position-absolute capa-product" style="">
+							<a href="{{route('productos.art', ['id' => $article->id])}}"><i class="fas fa-plus"></i> ver más</a>
 						</div>
 					</div>
+					<p class="card-content editorRico blanco text-center" style="">
+						{!!$article->title_es!!}
+					</p>		
 				</div>
 			</div>
-			<div class="center-align" style="background: #E5E5E9; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-				@forelse($article->images as $imgdest)
-					@if(file_exists(public_path().'/img/gallery/'.$imgdest->image))
-						<img class="responsive-img" src="{!!asset('img/gallery/'.$imgdest->image)!!}">
-					@else
-						<img class="responsive-img" src="{!!asset('img/logo/'.$default->image)!!}">
-					@endif
-					@break
-				@empty
-					<img src="{!!asset('img/logo/'.$default->image)!!}">
-				@endforelse
+			@endforeach
+			@foreach($familias as $family)
+			<div class="col-sm-12 col-md-4 mb-3" >
+				<div class="card w-100 mb-4" style="">				
+					<div class="position-relative mb-3">
+						@if(file_exists(public_path().'/img/producto_familia/'.$family->image))
+						<img class="img-fluid w-100" style="border: 1px solid #dadada;" src="{!!asset('img/producto_familia/'.$family->image)!!}">
+						@else
+						<img class="img-fluid w-100" style="border: 1px solid #dadada;" src="{!!asset('img/logo/'.$default->image)!!}">
+						@endif
+						<div class="position-absolute capa-product" style="">
+							<a href="{{route('productos.sub', ['id' => $family->id])}}"><i class="fas fa-plus"></i> ver más</a>
+						</div>				
+					</div>
+					<p class="card-content editorRico blanco text-center">
+						{!!$family->title_es!!}
+					</p>						
+				</div>
 			</div>
-			<div class="card-content editorRico blanco fw6 left-align" style="background: #58585A; padding: 10px; height: 85px; overflow: hidden;">
-				{!!$article->title_es!!}
-			</div>
-		</a>
-		</div>
-		</div>
-	</div>
-	@endforeach
-
-	@foreach($familias as $family)
-	<div class="col s12 m6 l3">
-		<div style="display: flex; justify-content: center; align-items: center;">
-		<div class="card center-align" style="width: 211px;">
-		<a href="{{route('productos.sub', ['id' => $family->id])}}">
-			<div class="center-align" style="background: #E5E5E9; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-					@if(file_exists(public_path().'/img/producto_familia/'.$family->image))
-						<img class="responsive-img" src="{!!asset('img/producto_familia/'.$family->image)!!}">
-					@else
-						<img class="responsive-img" src="{!!asset('img/logo/'.$default->image)!!}">
-					@endif
-			</div>
-			<div class="card-content editorRico blanco fw7" style="background-image: url({{asset('img/help/article.jpg')}});background-repeat: no-repeat; background-size: cover; height: 56px; margin: 0; display: flex; justify-content: center; align-items: center;">
-				{!!$family->title_es!!}
-			</div>
-		</a>
-		</div>
+			@endforeach
 		</div>
 	</div>
-	@endforeach
-
 </div>
-</div>
-</div>
-
 @endsection
 

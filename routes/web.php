@@ -13,7 +13,6 @@
 
 Route::group(['namespace' => 'Page'], function(){
 	Route::get('/', ['uses' => 'FrontendController@home'])->name('home');
-
 	Route::match(['get', 'post'] ,'buscador', ['uses' => 'FrontendController@index'])->name('buscador');
 	Route::match(['get', 'post'] ,'maquina/buscador', ['uses' => 'FrontendController@index'])->name('buscador');
 
@@ -30,6 +29,10 @@ Route::group(['namespace' => 'Page'], function(){
 	Route::get('novedades/categoria/{id}', 'FrontendController@novedade')->name('novedades.cat');
 	Route::get('novedades/detalle/{id}', 'FrontendController@novedad')->name('novedades.art');
 	Route::get('contacto', 'FrontendController@contacto')->name('contacto');
+	Route::get('uso-y-aplicaciones', 'FrontendController@usoYAplicaciones')->name('uso-y-aplicaciones');
+	Route::get('uso-y-aplicaciones/{id}', 'FrontendController@ObtenerusoYAplicacion')->name('uso-y-aplicaciones-detalle');
+	Route::get('descargas', 'FrontendController@descargas')->name('rdescargas');
+	Route::get('solucitar-presupuesto', 'FrontendController@solicitarPresupuesto')->name('solicitar-presupuesto');
 });
 
 Auth::routes();
