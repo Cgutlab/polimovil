@@ -10,7 +10,21 @@
 	<div class="container pt-4">
 		<div class="row">
 			<div class="col-sm-12 col-md-4 col-lg-3 mb-5">
-				@include('page.partials.sidebar-collapse')
+				<div id="wrapper">
+				   <!-- Sidebar -->
+				   <div id="sidebar-wrapper">
+				      <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+				         @foreach($keypad->sortBy('order') as $keyp) {{-- familias --}}
+				               <li class="">
+				                  <a href="{!!route('uso-y-aplicaciones-detalle', ['id' => $keyp->id])!!}" class="principal position-relative {{$uso->id == $keyp->id ? 'rCollapseActive' : ''}}">
+				                     {!!$keyp->title_es!!}
+				                     <i class="fas fa-angle-right position-absolute" style="right: 0; top: 12px;"></i>
+				                  </a>
+				               </li>      
+				         @endforeach
+				      </ul>
+				   </div>
+				</div>
 			</div>
 			<div class="col-sm-12 col-md-8 col-lg-9">
 				<div class="row mb-5">
@@ -78,7 +92,7 @@
 									<img src="{!!asset('img/logo/'.$default->image)!!}">
 								@endforelse								
 									<div class="position-absolute capa-product" style="">
-										<a href=""><i class="fas fa-plus"></i> ver más</a>
+										<a href="{!!route('productos.art', $product->id)!!}"><i class="fas fa-plus"></i> ver más</a>
 									</div>
 								</div>
 								<p class="card-content text-center" style="">

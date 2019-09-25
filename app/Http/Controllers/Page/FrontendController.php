@@ -86,10 +86,9 @@ class FrontendController extends Controller
         return view('page.uso-y-aplicaciones', compact('usos'));
     }
     public function ObtenerusoYAplicacion($id){
-        $keypad = Producto_familia::orderBy('order')->where('id', '<>', 0)->get();
-        $active = Producto_familia::find($id);
+        $keypad = Uso::orderBy('order')->get();
         $uso = Uso::find($id);
-        return view('page.uso-y-aplicacion-detalle', compact('uso', 'keypad', 'active'));
+        return view('page.uso-y-aplicacion-detalle', compact('uso', 'keypad'));
     }
 
     public function solicitarPresupuesto(){
