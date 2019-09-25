@@ -52,13 +52,7 @@ class FrontendController extends Controller
         $sliders = Slider::where('section', 'empresa')->orderBy('order')->get();
         return view('page.empresa', compact('content', 'sliders'));
     }
-    public function productos_art($id)
-    {
-        $keypad = Producto_familia::orderBy('order')->where('id', '<>', 0)->get();
 
-        $active = Producto::find($id);
-        return view('page.producto', compact('keypad', 'active'));
-    }
     /**
      * Store a newly created resource in storage.
      *
@@ -73,13 +67,20 @@ class FrontendController extends Controller
 
     public function productos_sub($id)
     {
-        $keypad = Producto_familia::orderBy('order')->where('id', '<>', 0)->get();
+        
         $active = Producto_familia::find($id);
         $familias = Producto_familia::orderBy('order')->where('family_id', $active->id)->get();
+        $keypad = Producto_familia::orderBy('order')->where('id', '<>', 0)->get();
         $productos = Producto::orderBy('order')->where('family_id', $id)->get();
         return view('page.subfamilias', compact('familias', 'productos', 'active', 'keypad'));
     }
+    public function productos_art($id)
+    {
+        $keypad = Producto_familia::orderBy('order')->where('id', '<>', 0)->get();
 
+        $active = Producto::find($id);
+        return view('page.producto', compact('keypad', 'active'));
+    }
     public function usoYAplicaciones(){
         $usos = Uso::orderBy('order')->get();
         return view('page.uso-y-aplicaciones', compact('usos'));
