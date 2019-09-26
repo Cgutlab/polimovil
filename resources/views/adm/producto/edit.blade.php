@@ -20,11 +20,22 @@
   {!!Form::model($data, ['route'=>['item_'.strtolower($model).'.update', $data->id], 'method'=>'PUT', 'files' => true])!!}
   {{ csrf_field() }}
   	<div class="row">
-        <div class="file-field input-field col m4 s12 right hide">
+        <div class="file-field input-field col m4 s12 right">
           {{-- Debe haber un registro en la tabla (familias) donde id sea cero (0) --}}
           <label for="family_id">@lang('translator.main-foreign')</label><br>
           <select name="family_id" id="family_id" class="validate">
-              <option value="{{$data->family->id}}">#Fam: {{$data->family->title_es}}</option>
+             @foreach($master as $fam)
+             @if($fam->family_id == 0)
+               <option value="{{ $fam->id }}" {!! $data->family_id == $fam->id ? 'selected':'' !!}>#Fam: {{$fam->id.' '.$fam->title_es}}</option>
+             
+               @foreach($fam->familias as $sub)
+                @if($sub->family_id == $fam->id)
+                <option value="{{ $sub->id }}" {!!$data->family_id == $sub->id ? 'selected':''!!}>#&nbsp;&nbsp;&nbsp;&nbsp; Sub: {{$sub->id.' '.$sub->title_es}}</option>
+                 @endif
+                @endforeach
+             
+             @endif
+             @endforeach
           </select>
         </div>
         <div class="file-field input-field col m8 s12">

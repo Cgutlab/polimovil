@@ -21,6 +21,7 @@ Route::group(['namespace' => 'Page'], function(){
 
 	Route::get('empresa', 'FrontendController@empresa')->name('empresa');
 	Route::get('productos/familias', 'FrontendController@productos_fam')->name('productos.fam');
+	Route::get('productos/categorias/{id}', 'FrontendController@productos_sub')->name('productos.cat');
 	Route::get('productos/subfamilias/{id}', 'FrontendController@productos_sub')->name('productos.sub');
 	Route::get('productos/detalle/{id}', 'FrontendController@productos_art')->name('productos.art');
 	Route::get('distribuidores/map', 'FrontendController@distribuidoresmap')->name('distribuidores');

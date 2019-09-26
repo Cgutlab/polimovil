@@ -18,7 +18,39 @@
 <div class="container pt-5 pb-5 rp-movil">
 	<div class="row align-items-start rOrderMovil">
 		<div class="col-sm-12 col-md-4 col-lg-3">
-			@include('page.partials.sidebar-collapse')
+			<ul class="list-unstyled">
+			@forelse($keypad as $key=>$item)
+			@if($item->id_family == 0)
+			@php $key = '100'.$key; @endphp
+			    <li class="list-group-item border-0 px-0">
+			        <a href="{{ route('productos.cat', ['id' => $item->id]) }}" data-target="#categoria_{{$key}}" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center p-2 border-bottom" style="{{ $item->id == $active->id ? 'font-weight: 800;' : '' }}">
+			           <span onclick="location.href='{{ route('productos.cat', ['id' => $item->id]) }}'">{!! $item->id. ' '.$item->title_es.' ? '. $item->family_id !!}</span><i class="fas fa-chevron-right ml-auto"></i>
+			        </a>
+			        <ul class="list-unstyled collapse {{ $item->id == $active->id ? 'show' : null }}" id="categoria_{{$key}}">
+			            @forelse($item->familias as $k=>$data)
+			            @php $k = '200'.$k; @endphp
+			                <li class="list-group-item border-0 px-3" style="font-size: 14px">
+			                    <a href="{{ route('productos.sub', ['id' => $data->id]) }}" data-target="#subcategoria_{{$k}}" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center p-2 border-bottom " style="{{ $data->id == $active->id ? 'font-weight: 800;' : '' }}">
+			                        <span onclick="location.href='{{ route('productos.sub', ['id' => $data->id]) }}'">{!! $data->id. ' '.$data->title_es !!}</span><i class="fas fa-chevron-right ml-auto"></i>
+			                    </a>
+			                    <ul class="list-unstyled" id="subcategoria_{{$k}}">
+			                        @forelse($data->producto as $art)
+			                            <li><a href="{{ route('productos.art',['id' => $art->id]) }}" class="px-3 py-2 @if(isset($producto)) {{$art->id == $producto->id ? 'distren-color': null }}@endif" style="{{ $data->id == $active->id ? 'font-weight: 800;' : '' }}">{{ $art->id. ' '.$art->title_es }}</a></li>
+			                        @empty
+			                            {{-- <li>!!<a href="" class="p-2">No hay registros</a></li> --}}
+			                        @endforelse
+			                    </ul>
+			                </li>
+			            @empty
+			                {{-- <li><a href="" class="p-2">No hay registros</a></li> --}}
+			            @endforelse
+			        </ul>
+			    </li>
+			@endif
+			@empty
+			    {{-- <li>#<a href="" class="p-2">No hay registros</a></li> --}}
+			@endforelse
+			</ul>
 		</div>
 		<div class="col-sm-12 col-md-8 col-lg-9">
 			<div class="row">
@@ -53,21 +85,23 @@
 					<div class="p-5" style="background-color: #ececec;">
 						<h6 class="mb-4 position-relative" style="color: #0088c7; font-weight: 600;">Productos relacionados</h6>
 						<div class="row">
-							@for ($i = 0; $i < 3; $i++)
-								<div class="col-sm-12 col-md-4">
-									<div class="card w-100 mb-4">
-										<div class="position-relative mb-3">
-											<img src="{{asset('img/gallery/06e2.jpg')}}" class="w-100 img-fluid" alt="">
-											<div class="position-absolute capa-product" style="">
-												<a href=""><i class="fas fa-plus"></i> ver más</a>
-											</div>
+							@foreach($productos as $article)
+							@if($active->family_id == $article->id_family)
+							<div class="col-sm-12 col-md-4">
+								<div class="card w-100 mb-4">
+									<div class="position-relative mb-3">
+										<img src="{{asset('img/gallery/06e2.jpg')}}" class="w-100 img-fluid" alt="">
+										<div class="position-absolute capa-product" style="">
+											<a href=""><i class="fas fa-plus"></i> ver más</a>
 										</div>
-										<p class="card-content editorRico blanco text-center" style="font-size: 16px;">
-											Lorem ipsum dolor sit
-										</p>		
-									</div>								
-								</div>
-							@endfor
+									</div>
+									<p class="card-content editorRico blanco text-center" style="font-size: 16px;">
+										{!!$article->title_es!!}
+									</p>		
+								</div>								
+							</div>
+							@endif
+							@endforeach
 						</div>
 					</div>			
 				</div>

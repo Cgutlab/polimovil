@@ -111,7 +111,7 @@ class ProductoController extends Controller
     public function edit($id)
     {
         $data = Producto::find($id);
-        $master = Producto_familia::orderBy('order')->pluck('title_es', 'id')->all();
+        $master = Producto_familia::orderBy('order')->where('id', '<>', 0)->get();
 
         return view('adm.'.strtolower($this->model).'.edit', ['data' => $data, 'model' => $this->model, 'master' => $master]);
     }

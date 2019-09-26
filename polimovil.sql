@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-09-2019 a las 04:10:08
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.8
+-- Tiempo de generación: 26-09-2019 a las 04:46:13
+-- Versión del servidor: 10.1.36-MariaDB
+-- Versión de PHP: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,12 +30,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admins` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci,
   `username` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` enum('user','admin') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'admin',
   `status` enum('on','off') COLLATE utf8mb4_unicode_ci DEFAULT 'on',
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` text COLLATE utf8mb4_unicode_ci,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -57,15 +57,15 @@ INSERT INTO `admins` (`id`, `name`, `username`, `type`, `status`, `email_verifie
 
 CREATE TABLE `contents` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `section` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subtitle_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image1` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image2` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image3` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `section` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
+  `type` text COLLATE utf8mb4_unicode_ci,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `subtitle_es` text COLLATE utf8mb4_unicode_ci,
+  `text_es` text COLLATE utf8mb4_unicode_ci,
+  `image1` text COLLATE utf8mb4_unicode_ci,
+  `image2` text COLLATE utf8mb4_unicode_ci,
+  `image3` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -87,9 +87,9 @@ INSERT INTO `contents` (`id`, `section`, `order`, `type`, `title_es`, `subtitle_
 
 CREATE TABLE `data` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `type` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `route` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` text COLLATE utf8mb4_unicode_ci,
+  `text` text COLLATE utf8mb4_unicode_ci,
+  `route` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -116,10 +116,10 @@ INSERT INTO `data` (`id`, `type`, `text`, `route`, `created_at`, `updated_at`) V
 
 CREATE TABLE `descargas` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
+  `file` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -139,8 +139,8 @@ INSERT INTO `descargas` (`id`, `image`, `title_es`, `order`, `file`, `created_at
 
 CREATE TABLE `logos` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `type` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` text COLLATE utf8mb4_unicode_ci,
+  `image` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -163,9 +163,9 @@ INSERT INTO `logos` (`id`, `type`, `image`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `metadata` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `section` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keyword_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `section` text COLLATE utf8mb4_unicode_ci,
+  `keyword_es` text COLLATE utf8mb4_unicode_ci,
+  `description_es` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -223,12 +223,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `novedad_articulos` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `extract_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subtitle_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `extract_es` text COLLATE utf8mb4_unicode_ci,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `subtitle_es` text COLLATE utf8mb4_unicode_ci,
+  `text_es` text COLLATE utf8mb4_unicode_ci,
+  `file` text COLLATE utf8mb4_unicode_ci,
   `novedad_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -252,8 +252,8 @@ INSERT INTO `novedad_articulos` (`id`, `image`, `extract_es`, `title_es`, `subti
 
 CREATE TABLE `novedad_categorias` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -275,14 +275,14 @@ INSERT INTO `novedad_categorias` (`id`, `title_es`, `order`, `created_at`, `upda
 
 CREATE TABLE `productos` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `document` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `outstanding` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keyword_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `document` text COLLATE utf8mb4_unicode_ci,
+  `code` text COLLATE utf8mb4_unicode_ci,
+  `text_es` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
+  `outstanding` text COLLATE utf8mb4_unicode_ci,
+  `file` text COLLATE utf8mb4_unicode_ci,
+  `keyword_es` text COLLATE utf8mb4_unicode_ci,
   `family_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -293,10 +293,10 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `title_es`, `document`, `code`, `text_es`, `order`, `outstanding`, `file`, `keyword_es`, `family_id`, `created_at`, `updated_at`) VALUES
-(20, 'Base Giratoria', '29e1.jpg', NULL, '<p>&bull; N&uacute;cleo de pol&iacute;mero bada de goma el&aacute;stica azul con rodamiento a rodillo.</p>\r\n\r\n<p>&bull; Antivibraciones</p>\r\n\r\n<p>&bull; Especialmente indicada para equipos de sonido, electr&oacute;nicos y todos aquellos que requieren desplazamiento amortiguado.</p>', 'AA', NULL, NULL, 'Rueda Elástica Goma Giratoria', 1, '2019-09-17 03:29:47', '2019-09-17 03:29:47'),
-(28, 'Base Giratoria con Freno', 'C:\\xampp\\tmp\\php79EF.tmp', NULL, '<p>&bull; N&uacute;cleo de pol&iacute;mero bada de goma el&aacute;stica azul con rodamiento a rodillo.</p>\r\n\r\n<p>&bull; Antivibraciones</p>\r\n\r\n<p>&bull; Especialmente indicada para equipos de sonido, electr&oacute;nicos y todos aquellos que requieren desplazamiento amortiguado.</p>', 'BB', NULL, NULL, 'Ruedas Elástica Goma Giratoria Freno', 1, '2019-09-17 03:41:27', '2019-09-17 03:41:27'),
-(29, 'Base Fija', '27e3.jpg', NULL, '<p>&bull; N&uacute;cleo de pol&iacute;mero bada de goma el&aacute;stica azul con rodamiento a rodillo.</p>\r\n\r\n<p>&bull; Antivibraciones</p>\r\n\r\n<p>&bull; Especialmente indicada para equipos de sonido, electr&oacute;nicos y todos aquellos que requieren desplazamiento amortiguado.</p>', 'CC', NULL, NULL, 'Ruedas Elástica Goma Base Fija', 1, '2019-09-17 03:43:27', '2019-09-17 03:43:27'),
-(30, 'Rueda Suelta', '51e4.jpg', NULL, '<p>&bull; N&uacute;cleo de pol&iacute;mero bada de goma el&aacute;stica azul con rodamiento a rodillo.</p>\r\n\r\n<p>&bull; Antivibraciones</p>\r\n\r\n<p>&bull; Especialmente indicada para equipos de sonido, electr&oacute;nicos y todos aquellos que requieren desplazamiento amortiguado.</p>', 'DD', NULL, NULL, 'Ruedas Elástica Goma Rueda Suelta', 1, '2019-09-17 03:43:51', '2019-09-17 03:43:51');
+(20, 'Base Giratoria', '29e1.jpg', NULL, '<p>&bull; N&uacute;cleo de pol&iacute;mero bada de goma el&aacute;stica azul con rodamiento a rodillo.</p>\r\n\r\n<p>&bull; Antivibraciones</p>\r\n\r\n<p>&bull; Especialmente indicada para equipos de sonido, electr&oacute;nicos y todos aquellos que requieren desplazamiento amortiguado.</p>', 'AA', NULL, NULL, 'Rueda Elástica Goma Giratoria', 14, '2019-09-17 03:29:47', '2019-09-26 04:42:48'),
+(28, 'Base Giratoria con Freno', 'C:\\xampp\\tmp\\php79EF.tmp', NULL, '<p>&bull; N&uacute;cleo de pol&iacute;mero bada de goma el&aacute;stica azul con rodamiento a rodillo.</p>\r\n\r\n<p>&bull; Antivibraciones</p>\r\n\r\n<p>&bull; Especialmente indicada para equipos de sonido, electr&oacute;nicos y todos aquellos que requieren desplazamiento amortiguado.</p>', 'BB', NULL, NULL, 'Ruedas Elástica Goma Giratoria Freno', 14, '2019-09-17 03:41:27', '2019-09-26 04:43:01'),
+(29, 'Base Fija', '27e3.jpg', NULL, '<p>&bull; N&uacute;cleo de pol&iacute;mero bada de goma el&aacute;stica azul con rodamiento a rodillo.</p>\r\n\r\n<p>&bull; Antivibraciones</p>\r\n\r\n<p>&bull; Especialmente indicada para equipos de sonido, electr&oacute;nicos y todos aquellos que requieren desplazamiento amortiguado.</p>', 'CC', NULL, NULL, 'Ruedas Elástica Goma Base Fija', 14, '2019-09-17 03:43:27', '2019-09-26 04:43:16'),
+(30, 'Rueda Suelta', '51e4.jpg', NULL, '<p>&bull; N&uacute;cleo de pol&iacute;mero bada de goma el&aacute;stica azul con rodamiento a rodillo.</p>\r\n\r\n<p>&bull; Antivibraciones</p>\r\n\r\n<p>&bull; Especialmente indicada para equipos de sonido, electr&oacute;nicos y todos aquellos que requieren desplazamiento amortiguado.</p>', 'DD', NULL, NULL, 'Ruedas Elástica Goma Rueda Suelta', 14, '2019-09-17 03:43:51', '2019-09-26 04:43:27');
 
 -- --------------------------------------------------------
 
@@ -306,10 +306,10 @@ INSERT INTO `productos` (`id`, `title_es`, `document`, `code`, `text_es`, `order
 
 CREATE TABLE `producto_familias` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `level` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
+  `level` text COLLATE utf8mb4_unicode_ci,
   `family_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -345,8 +345,8 @@ INSERT INTO `producto_familias` (`id`, `image`, `title_es`, `order`, `level`, `f
 
 CREATE TABLE `producto_imagens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
   `product_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -370,9 +370,9 @@ INSERT INTO `producto_imagens` (`id`, `image`, `order`, `product_id`, `created_a
 
 CREATE TABLE `reds` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `route` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `route` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -393,13 +393,13 @@ INSERT INTO `reds` (`id`, `image`, `route`, `order`, `created_at`, `updated_at`)
 
 CREATE TABLE `sliders` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `section` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subtitle_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
+  `section` text COLLATE utf8mb4_unicode_ci,
+  `type` text COLLATE utf8mb4_unicode_ci,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `text_es` text COLLATE utf8mb4_unicode_ci,
+  `subtitle_es` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -420,10 +420,10 @@ INSERT INTO `sliders` (`id`, `image`, `order`, `section`, `type`, `title_es`, `t
 
 CREATE TABLE `usos` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `outstanding` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `text_es` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
+  `outstanding` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -450,8 +450,8 @@ INSERT INTO `usos` (`id`, `title_es`, `text_es`, `order`, `outstanding`, `create
 
 CREATE TABLE `uso_imagens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `orden` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `orden` text COLLATE utf8mb4_unicode_ci,
   `uso_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -705,7 +705,7 @@ ALTER TABLE `reds`
 -- AUTO_INCREMENT de la tabla `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usos`
