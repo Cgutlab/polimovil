@@ -43,6 +43,7 @@ class AppServiceProvider extends ServiceProvider
         $whatsapp2 = Data::where('type','whatsappFlotante')->first();
         $info      = Data::where('type','info_contacto')->first();
         $map       = Data::where('type','info_google')->first();
+        $tel_preheader = Data::where('type','tel-preheader')->first();
 
         $redes     = RedSocial::orderBy('order')->get();
 
@@ -61,6 +62,7 @@ class AppServiceProvider extends ServiceProvider
         'redes'     => $redes,
         'telefono1' => $telefono1,
         'telefono2' => $telefono2,
+        'tel_preheader' => $tel_preheader,
         ]);
     }
 }

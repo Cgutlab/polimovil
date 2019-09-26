@@ -91,6 +91,7 @@ class FrontendController extends Controller
     public function ObtenerusoYAplicacion($id){
         $keypad = Uso::orderBy('order')->get();
         $uso = Uso::find($id);
+        // $productos = Producto::where('')
         return view('page.uso-y-aplicacion-detalle', compact('uso', 'keypad'));
     }
 

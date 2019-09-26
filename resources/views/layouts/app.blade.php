@@ -28,10 +28,11 @@
 <body>
 	<div class="pre-nav azul-principal" style="border-bottom: 1px solid #4dadd7;">
 		<div class="container d-flex  justify-content-between align-items-center">
-			<div class="">			
-				<a href="https://wa.me/{{$whatsapp2->route}}" class="" style="color: #fdfdfd; font-size: 16px; font-weight: 500;">
-					<img src="{{asset('img/help/whatsappPrenav.png')}}" style="background-color: #00618a;" class="p-2"> 011 2188 1903
+			<div class="d-flex align-items-center whatsapp_preHeader">			
+				<a href="https://wa.me/{{$tel_preheader->route}}" class="d-bloc mr-3" style="color: #fdfdfd; font-size: 16px; font-weight: 500;">
+					<img src="{{asset('img/help/whatsappPrenav.png')}}" style="background-color: #00618a;" class="p-2"> 
 				</a>
+				{!! $tel_preheader->text !!}
 			</div>
 			<div class="d-flex align-items-center">
 				<form action="{{route('buscador.query')}}" method="get" style="max-width: 220px;">
@@ -174,31 +175,11 @@
 	<script src="{{asset('js/bootstrap/bootstrap.js')}}"></script>
 	<script src="{{asset('js/mostrarSeccionesForm.js')}}"></script>
 	<script>
-		function initMenu() {
-		   $('#menu ul').hide();
-		   $('#menu ul').children('.current').parent().show();
-		   $('#menu li a').click(
-		      function() {
-		         var checkElement = $(this).next();
-		         if ((checkElement.is('ul')) && (checkElement.is(':visible'))) {
-		            return false;
-		         }
-		         if ((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
-		            $('#menu ul:visible').slideUp('normal');
-		            checkElement.slideDown('normal');
-		            return false;
-		         }
-		      }
-		   );
-		}
-		$(document).ready(function() {
-		   initMenu();
-		});
-		$('.principal').click(function(){
-			$('.nav-stacked li a').removeClass('rCollapseActive')
-			$('.nav-stacked li a').find('i').addClass('fa-angle-right').removeClass('fa-angle-down')
-			$(this).addClass('rCollapseActive')
-			$(this).find('i').removeClass('fa-angle-right').addClass('fa-angle-down')
+		$(document).ready(function(){
+			$('.img-peq').click(function(){
+				let img = $(this)
+				$('#img_principal').attr('src', img.attr('src'))
+			})
 		})
 	</script>
 	<a class="position-fixed whatsappFlotante rounded-circle d-flex shadow justify-content-center align-items-center text-white" target="_blank" href="https://wa.me/{{$whatsapp2->route}}" style="">

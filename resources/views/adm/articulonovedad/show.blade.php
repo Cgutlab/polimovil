@@ -7,12 +7,12 @@
 <div class="container" style="width: 100%;">
 <div class="row">
 	<div class="col s8">
-		<h4 style="color: var(--main-color-links)">{!!$master->title_es!!}</h4>
+		{{-- <h4 style="color: var(--main-color-links)">{!!$master->title_es!!}</h4> --}}
 		{{-- @include('adm.layouts.report') --}}
 	</div>
 	<div class="col s4">
 		<a href="{{ route('categorianovedad.index') }}" class="btn-floating btn-medium waves-effect waves-light blue right ml-3x"><i class="material-icons">keyboard_backspace</i></a>
-		<a href="{{ route(strtolower($model).'.create', ['id' => $master->id]) }}" class="btn-floating btn-medium waves-effect waves-light green right ml-3x"><i class="material-icons">add</i></a>
+{{-- 		<a href="{{ route(strtolower($model).'.create', ['id' => $master->id]) }}" class="btn-floating btn-medium waves-effect waves-light green right ml-3x"><i class="material-icons">add</i></a> --}}
 	</div>
 </div>
 <div class="row">

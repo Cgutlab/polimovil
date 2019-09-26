@@ -13,7 +13,7 @@
 			<span>|</span>
 			<a class="" style="color: #666666; font-weight: 500;" href="{{route('novedades.cat', $active->category->id)}}">{{strtoupper($active->category->title_es)}}</a>
 			<span>|</span>
-			{{-- <span class="" style="color: #666666;">{{strtoupper($active->title_es)}}</span><br> --}}
+			<span class="" style="color: #666666;">{{strtoupper($active->title_es)}}</span><br>
 		</div>
 	</div>
 	<div class="row justify-content-between novedades mb-5">
@@ -29,6 +29,7 @@
 				<img class="img-fluid w-100 mb-4" src="{!!asset('img/logo/'.$default->image)!!}">
 				@endif
 			</div>
+			<h3 style="color: #0088c7; font-weight: 600; margin-bottom: 15px;">{!! $active->title_es !!}</h3>
 			<div class="articulo-descripcion">{!!$active->text_es!!}</div>
 			<div>
 				<a href="" class="d-inline-block mt-3 mb-3" style="font-size: 20px; font-weight: 600;">

@@ -9,7 +9,9 @@
 <div aria-label="breadcrumb" class="container mt-3">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{route('productos.fam')}}" style="font-weight: 500; color: #737373;">Productos</a></li>
-    <li class="breadcrumb-item active" aria-current="page" style="font-weight: 500; color: #737373;">Industrial</li>
+    <li class="breadcrumb-item active" aria-current="page" style="font-weight: 500; color: #737373;">
+    	{{ $active->title_es }}
+    </li>
   </ol>
 </div>
 <div class="container pt-5 pb-5 rp-movil">
@@ -21,14 +23,14 @@
 			@php $key = '100'.$key; @endphp
 			    <li class="list-group-item border-0 px-0">
 			        <a href="{{ route('productos.cat', ['id' => $item->id]) }}" data-target="#categoria_{{$key}}" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center p-2 border-bottom" style="{{ $item->id == $active->id ? 'font-weight: 800;' : '' }}">
-			           <span onclick="location.href='{{ route('productos.cat', ['id' => $item->id]) }}'">{!! $item->id. ' '.$item->title_es.' ? '. $item->family_id !!}</span><i class="fas fa-chevron-right ml-auto"></i>
+			           <span onclick="location.href='{{ route('productos.cat', ['id' => $item->id]) }}'">{!! $item->title_es !!}</span><i class="fas fa-chevron-right ml-auto"></i>
 			        </a>
 			        <ul class="list-unstyled collapse {{ $item->id == $active->id ? 'show' : null }}" id="categoria_{{$key}}">
 			            @forelse($item->familias as $k=>$data)
 			            @php $k = '200'.$k; @endphp
 			                <li class="list-group-item border-0 px-3" style="font-size: 14px">
 			                    <a href="{{ route('productos.sub', ['id' => $data->id]) }}" data-target="#subcategoria_{{$k}}" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center p-2 border-bottom " style="{{ $data->id == $active->id ? 'font-weight: 800;' : '' }}">
-			                        <span onclick="location.href='{{ route('productos.sub', ['id' => $data->id]) }}'">{!! $data->id. ' '.$data->title_es !!}</span><i class="fas fa-chevron-right ml-auto"></i>
+			                        <span onclick="location.href='{{ route('productos.sub', ['id' => $data->id]) }}'">{!! $data->title_es !!}</span><i class="fas fa-chevron-right ml-auto"></i>
 			                    </a>
 			                    <ul class="list-unstyled" id="subcategoria_{{$k}}">
 			                        @forelse($data->producto as $art)

@@ -69,13 +69,13 @@ class ArticuloNovedadController extends Controller
      */
     public function index()
     {
-      $data = Novedad_articulo::orderBy('order')->paginate(20);
+      $data = Novedad_articulo::paginate(20);
       return view('adm.'.strtolower($this->model).'.show', ['data' => $data, 'model' => $this->model]);
     }
 
     public function show($id)
     {
-        $data = Novedad_articulo::orderBy('order')->where('novedad_id', $id)->paginate(10);
+        $data = Novedad_articulo::where('novedad_id', $id)->paginate(10);
         $master = Novedad_categoria::find($id);
         return view('adm.'.strtolower($this->model).'.show', ['data' => $data, 'model' => $this->model, 'master' => $master]);
     }

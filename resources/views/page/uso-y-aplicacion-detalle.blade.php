@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Familias')
+@section('title', 'Uso y aplicaciones')
 @section('content')
 <div class="header">
 	<div class=" d-flex align-items-end container" style="min-height: 80px">

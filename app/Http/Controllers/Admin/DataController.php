@@ -30,6 +30,7 @@ class DataController extends Controller
      */
     public function create()
     {
+
         return view('adm.'.strtolower($this->model).'.create', ['model' => $this->model]);
     }
 

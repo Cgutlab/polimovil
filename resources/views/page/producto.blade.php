@@ -24,7 +24,8 @@
 			@php $key = '100'.$key; @endphp
 			    <li class="list-group-item border-0 px-0">
 			        <a href="{{ route('productos.cat', ['id' => $item->id]) }}" data-target="#categoria_{{$key}}" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center p-2 border-bottom" style="{{ $item->id == $active->id ? 'font-weight: 800;' : '' }}">
-			           <span onclick="location.href='{{ route('productos.cat', ['id' => $item->id]) }}'">{!! $item->id. ' '.$item->title_es.' ? '. $item->family_id !!}</span><i class="fas fa-chevron-right ml-auto"></i>
+			           <span onclick="location.href='{{ route('productos.cat', ['id' => $item->id]) }}'">{!!
+			           	$item->title_es !!}</span><i class="fas fa-chevron-right ml-auto"></i>
 			        </a>
 			        <ul class="list-unstyled collapse {{ $item->id == $active->id ? 'show' : null }}" id="categoria_{{$key}}">
 			            @forelse($item->familias as $k=>$data)
@@ -58,15 +59,15 @@
 					<div class="row">
 						<div class="col-sm-12 mb-3">
 						    @foreach($active->images as $sd)
-						        <img src="{!!asset('img/gallery/'.$sd->image)!!}" class="img-fluid w-100" style="border: 1px solid #cbcbcb;">
+						        <img src="{!!asset('img/gallery/'.$sd->image)!!}" id="img_principal" class="img-fluid w-100" style="border: 1px solid #cbcbcb;">
 						    @endforeach									
 						</div>
 						<div class="d-flex justify-content-between" style="padding-right: 15px; padding-left: 15px;">
-							@for ($i = 0; $i < 3; $i++)
+							@foreach ($active->images as $image)
 								<div class="" style="flex-basis: 30%;">
-									<img src="{!!asset('img/gallery/'.$sd->image)!!}" class="img-fluid w-100" style="border: 1px solid #cbcbcb;">
+									<img src="{!!asset('img/gallery/'.$image->image)!!}" class="img-fluid w-100 img-peq" style="border: 1px solid #cbcbcb; cursor: pointer;">
 								</div>
-							@endfor							
+							@endforeach											
 						</div>
 
 					</div>
@@ -86,21 +87,24 @@
 						<h6 class="mb-4 position-relative" style="color: #0088c7; font-weight: 600;">Productos relacionados</h6>
 						<div class="row">
 							@foreach($productos as $article)
-							@if($active->family_id == $article->id_family)
-							<div class="col-sm-12 col-md-4">
-								<div class="card w-100 mb-4">
-									<div class="position-relative mb-3">
-										<img src="{{asset('img/gallery/06e2.jpg')}}" class="w-100 img-fluid" alt="">
-										<div class="position-absolute capa-product" style="">
-											<a href=""><i class="fas fa-plus"></i> ver más</a>
-										</div>
+								@if( $active->family_id == $article->family_id  AND $active->id !== $article->id)
+									<div class="col-sm-12 col-md-4">
+										<div class="card w-100 mb-4">
+											<div class="position-relative mb-3">
+												@foreach ($article->images as $image)
+													<img src="{{asset('img/gallery/' . $image->image)}}" class="w-100 img-fluid" alt="">
+												@endforeach
+												
+												<div class="position-absolute capa-product" style="">
+													<a href=""><i class="fas fa-plus"></i> ver más</a>
+												</div>
+											</div>
+											<p class="card-content editorRico blanco text-center" style="font-size: 16px;">
+												{!!$article->title_es!!}
+											</p>		
+										</div>								
 									</div>
-									<p class="card-content editorRico blanco text-center" style="font-size: 16px;">
-										{!!$article->title_es!!}
-									</p>		
-								</div>								
-							</div>
-							@endif
+								@endif
 							@endforeach
 						</div>
 					</div>			

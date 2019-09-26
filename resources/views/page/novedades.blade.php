@@ -26,9 +26,12 @@
 						</div>
 						<div class="col-sm-12 col-lg-9 novedades-content-descripcion">
 							<div class="pl-4 pt-4 h-100" style="background-color: #f2f2f2;">
-								<h4 style="color: #00318c; font-weight: 600;">Lorem ipsum dolor sit amet</h4>
+								<h4 style="color: #00318c; font-weight: 600;">{{$fam->title_es}}</h4>
 								<p class="mb-4">{!!$fam->extract_es!!}</p>		
-								<a href="{{route('novedades.art', ['id' => $fam->id])}}" class="mb-3 d-inline-block"><img src="{{asset('img/help/flecha.fw.png')}}" alt=""> VER MÁS</a>
+								<a href="{{route('novedades.art', ['id' => $fam->id])}}" class="mb-3 d-inline-block">
+									<img src="{{asset('img/help/flecha.fw.png')}}" alt="" style="filter: grayscale(1); opacity: .4;" class="d-inline-block mr-3"> 
+									VER MÁS
+								</a>
 							</div>						
 						</div>
 					</div>
