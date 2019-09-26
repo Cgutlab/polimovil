@@ -23,6 +23,7 @@ class CreateNovedadArticulosTable extends Migration
             $table->text('file')->nullable();
             $table->bigInteger('novedad_id')->unsigned()->nullable();
             $table->foreign('novedad_id')->references('id')->on('novedad_categorias')->onDelete('cascade');
+            $table->string('order')
             $table->timestamps();
         });
     }

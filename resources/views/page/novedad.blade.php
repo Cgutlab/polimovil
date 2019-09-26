@@ -24,9 +24,9 @@
 			</div>
 			<div style="margin-top: 10px;">
 				@if(file_exists(public_path().'/img/novedad_articulo/'.$active->image))
-				<img class="img-fluid w-100 mb-4" src="{!!asset('img/novedad_articulo/'.$active->image)!!}">
+				<img class="img-fluid d-block mx-auto mb-4" src="{!!asset('img/novedad_articulo/'.$active->image)!!}">
 				@else
-				<img class="img-fluid w-100 mb-4" src="{!!asset('img/logo/'.$default->image)!!}">
+				<img class="img-fluid d-block mx-auto mb-4" src="{!!asset('img/logo/'.$default->image)!!}">
 				@endif
 			</div>
 			<h3 style="color: #0088c7; font-weight: 600; margin-bottom: 15px;">{!! $active->title_es !!}</h3>

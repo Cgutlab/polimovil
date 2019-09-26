@@ -19,9 +19,11 @@
 					<div class="row">
 						<div class="col-sm-12 col-lg-3 novedades-content-image">
 							@if(file_exists(public_path().'/img/novedad_articulo/'.$fam->image))
-								<img class="img-fluid w-100 h-100" style="object-fit: cover;" src="{!!asset('img/novedad_articulo/'.$fam->image)!!}">
+								<div class="w-100">
+									<img class="img-fluid w-100 h-100" style="object-fit: cover;" src="{!!asset('img/novedad_articulo/'.$fam->image)!!}">
+								</div>
 							@else
-								<img class="img-fluid w-100 h-100" style="object-fit: cover;" src="{!!asset('img/logo/'.$default->image)!!}">
+								<img class="img-fluid h-100" style="object-fit: cover;" src="{!!asset('img/logo/'.$default->image)!!}">
 							@endif							
 						</div>
 						<div class="col-sm-12 col-lg-9 novedades-content-descripcion">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2019 a las 07:59:07
+-- Tiempo de generación: 26-09-2019 a las 23:38:06
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.8
 
@@ -231,6 +231,7 @@ CREATE TABLE `novedad_articulos` (
   `text_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `file` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `novedad_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `order` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -239,11 +240,10 @@ CREATE TABLE `novedad_articulos` (
 -- Volcado de datos para la tabla `novedad_articulos`
 --
 
-INSERT INTO `novedad_articulos` (`id`, `image`, `extract_es`, `title_es`, `subtitle_es`, `text_es`, `file`, `novedad_id`, `created_at`, `updated_at`) VALUES
-(1, 'n1.jpg', 'Estaremos presentes en la ExpoFerretera. Los invitamos a visitarnos del 3 al 6 de Junio en el Centro de Exposiciones Costa Salguero.', 'Eventos', '', '<p><strong>EXPOFERRETERA, La Exposición Internacional de Artículos para Ferreterías, Sanitarios, Pinturerías y Materiales de Construcción</strong></p><p>Estaremos presentes en la ExpoFerretera. Los invitamos a visitarnos del 3 al 6 de Junio en el Centro de Exposiciones Costa Salguero. <br>Consolidada como el evento más relevante del sector en Sudamérica, ExpoFerretera se celebra cada dos años en Buenos Aires englobando a todo el mercado de la fabricación e importación de productos para la construcción y maquinarias de uso domiciliario o industrial. Bienalmente, refleja la situación actual de la industria, exhibe los principales avances tecnológicos e impulsa la capacitación.</p>', NULL, 1, NULL, NULL),
-(2, 'n2.jpg', 'Hemos actualizado nuestra sección de distribuidores para que encuentres todo lo que necesitás cerca tuyo.', 'Eventos', '', '', NULL, 1, NULL, NULL),
-(3, 'n3.jpg', 'Estaremos presentes en la ExpoFerretera. Los invitamos a visitarnos del 3 al 6 de Junio en el Centro de Exposiciones Costa Salguero.', 'Promociones', '', '', NULL, 2, NULL, NULL),
-(4, 'n4.jpg', 'Hemos actualizado nuestra sección de distribuidores para que encuentres todo lo que necesitás cerca tuyo.', 'Productos', '', '', NULL, 3, NULL, NULL);
+INSERT INTO `novedad_articulos` (`id`, `image`, `extract_es`, `title_es`, `subtitle_es`, `text_es`, `file`, `novedad_id`, `order`, `created_at`, `updated_at`) VALUES
+(2, '46presentacion-polimovil.fw.png', 'Polimóvil Ruedas es una empresa dedicada a la fabricación y distribución de ruedas Industriales, para muebles, equipamiento hospitalario y usos múltiples.', 'Presentación de Polimóvil Ruedas', '', '<p>Polim&oacute;vil Ruedas es una empresa dedicada a la fabricaci&oacute;n y distribuci&oacute;n de ruedas Industriales, para muebles, equipamiento hospitalario y usos m&uacute;ltiples.</p>', NULL, 1, 'AA', NULL, '2019-09-26 18:44:46'),
+(3, '49catalogo-productos.fw.png', 'EnPolimóvil Ruedas contamos con una amplia variedad y un stock permanente de productos. Ingresa para descargar nuestro catálogo', 'Catálogo de Productos 2019', '', '<p>EnPolim&oacute;vil Ruedas contamos con una amplia variedad y un stock permanente de productos. Ingresa para descargar nuestro cat&aacute;logo</p>', NULL, 2, 'AA', NULL, '2019-09-26 18:43:49'),
+(4, '34personal-capacitado.png', 'Nuestro equipo de personal especializado pone a disposición su amplia experiencia para satisfacer las necesidades de los clientes.', 'Personal Capacitado', '', '<p>Nuestro equipo de personal especializado pone a disposici&oacute;n su amplia experiencia para satisfacer las necesidades de los clientes.</p>', NULL, 3, 'AA', NULL, '2019-09-26 18:41:34');
 
 -- --------------------------------------------------------
 
@@ -266,7 +266,7 @@ CREATE TABLE `novedad_categorias` (
 INSERT INTO `novedad_categorias` (`id`, `title_es`, `order`, `created_at`, `updated_at`) VALUES
 (1, 'Eventos', 'AA', NULL, NULL),
 (2, 'Productos', 'BB', NULL, NULL),
-(3, 'Promociones', 'CC', NULL, NULL);
+(3, 'Empresas', 'CC', NULL, '2019-09-26 18:10:30');
 
 -- --------------------------------------------------------
 
