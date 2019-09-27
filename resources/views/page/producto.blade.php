@@ -9,7 +9,10 @@
 <div aria-label="breadcrumb" class="container mt-3">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{route('productos.fam')}}" style="font-weight: 500; color: #737373;">Productos</a></li>
-    <li class="breadcrumb-item"><a href="{{ url()->previous() }}" style="font-weight: 500; color: #737373;">Sub Familias</a></li>
+    <li class="breadcrumb-item"><a href="{{route('productos.cat', ['id' => $active->family->family_id])}}" style="font-weight: 500; color: #737373;">{{$active->family->familia->title_es}}</a></li>
+    @if($active->family_id != 0)
+    <li class="breadcrumb-item"><a href="{{route('productos.sub', ['id' => $active->family->id])}}" style="font-weight: 500; color: #737373;">{{$active->family->title_es}}</a></li>
+    @endif
     <li class="breadcrumb-item active" aria-current="page" style="font-weight: 500; color: #737373;">
     	{{$active->title_es}}
     </li>
@@ -23,20 +26,19 @@
 			@if($item->id_family == 0)
 			@php $key = '100'.$key; @endphp
 			    <li class="list-group-item border-0 px-0">
-			        <a href="{{ route('productos.cat', ['id' => $item->id]) }}" data-target="#categoria_{{$key}}" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center p-2 border-bottom" style="{{ $item->id == $active->id ? 'font-weight: 800;' : '' }}">
-			           <span onclick="location.href='{{ route('productos.cat', ['id' => $item->id]) }}'">{!!
-			           	$item->title_es !!}</span><i class="fas fa-chevron-right ml-auto"></i>
+			        <a href="{{ route('productos.cat', ['id' => $item->id]) }}" data-target="#categoria_{{$key}}" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center p-2 border-bottom" style="{{ $item->id == $active->family->family_id ? 'font-weight: 800;' : '' }}">
+			           <span onclick="location.href='{{ route('productos.cat', ['id' => $item->id]) }}'">{!! $item->title_es !!}</span><i class="fas fa-chevron-right ml-auto"></i>
 			        </a>
 			        <ul class="list-unstyled collapse {{ $item->id == $active->id ? 'show' : null }}" id="categoria_{{$key}}">
 			            @forelse($item->familias as $k=>$data)
 			            @php $k = '200'.$k; @endphp
 			                <li class="list-group-item border-0 px-3" style="font-size: 14px">
-			                    <a href="{{ route('productos.sub', ['id' => $data->id]) }}" data-target="#subcategoria_{{$k}}" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center p-2 border-bottom " style="{{ $data->id == $active->id ? 'font-weight: 800;' : '' }}">
-			                        <span onclick="location.href='{{ route('productos.sub', ['id' => $data->id]) }}'">{!! $data->id. ' '.$data->title_es !!}</span><i class="fas fa-chevron-right ml-auto"></i>
+			                    <a href="{{ route('productos.sub', ['id' => $data->id]) }}" data-target="#subcategoria_{{$k}}" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center p-2 border-bottom " style="{{ $data->id == $active->family_id ? 'font-weight: 800;' : '' }}">
+			                        <span onclick="location.href='{{ route('productos.sub', ['id' => $data->id]) }}'">{!! $data->title_es !!}</span><i class="fas fa-chevron-right ml-auto"></i>
 			                    </a>
 			                    <ul class="list-unstyled" id="subcategoria_{{$k}}">
 			                        @forelse($data->producto as $art)
-			                            <li><a href="{{ route('productos.art',['id' => $art->id]) }}" class="px-3 py-2 @if(isset($producto)) {{$art->id == $producto->id ? 'distren-color': null }}@endif" style="{{ $data->id == $active->id ? 'font-weight: 800;' : '' }}">{{ $art->id. ' '.$art->title_es }}</a></li>
+			                            <li><a href="{{ route('productos.art',['id' => $art->id]) }}" class="px-3 py-2 @if(isset($producto)) {{$art->id == $producto->id ? 'distren-color': null }}@endif" style="{{ $art->id == $active->id ? 'font-weight: 800;' : '' }}">{{ $art->title_es }}</a></li>
 			                        @empty
 			                            {{-- <li>!!<a href="" class="p-2">No hay registros</a></li> --}}
 			                        @endforelse
@@ -78,7 +80,9 @@
 						{!! $active->text_es !!}
 					</div>
 					<div class="mb-3">
-						<a href="" class="btn btn-primary mr-3" style="background-color: #0088c7;">Descargar Ficha Técnica</a>
+						@if($active->document && (file_exists(public_path().'/img/novedad_articulo/'.$active->image)))
+						<a download href="{{asset('img/producto_ficha/'.$active->document)}}" target="_blank" class="btn btn-primary mr-3" style="background-color: #0088c7;">Descargar Ficha Técnica</a>
+						@endif
 						<a href="{{route('solicitar-presupuesto')}}" class="btn btn-primary" style="background-color: #0088c7;">Consultar</a>
 					</div>
 				</div>

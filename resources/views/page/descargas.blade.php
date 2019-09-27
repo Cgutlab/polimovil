@@ -13,10 +13,10 @@
 				<img src='{{asset("img/descarga/$descarga->image")}}' alt="">
 				<div class="ml-4" style="max-width: 350px;">
 					<h1 class="mb-3" style="color: #0088c7; font-weight: 600;">{{$descarga->title_es}}</h1>
-					<a href="" class="d-inline-block mr-3" style="font-size: 25px;">
+					<a href="{{asset('img/descarga/'.$descarga->file)}}" target="_blank" class="d-inline-block mr-3" style="font-size: 25px;">
 						<img src="{{'img/help/vista.png'}}" alt="" class="img-fluid">
 					</a>
-					<a href="" class="" style="font-size: 25px;">
+					<a href="{{asset('img/descarga/'.$descarga->file)}}" target="_blank" download class="" style="font-size: 25px;">
 						<img src="{{'img/help/descarga.png'}}" alt="" class="img-fluid">
 					</a>
 				</div>

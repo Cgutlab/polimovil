@@ -36,7 +36,7 @@
 		</div>
 	</section>
 	<section class="row pt-5 pb-5">
-		<form method="post" action="{{route('contacto.send')}}" class="col-md-7 mx-auto form-contacto">
+		<form method="post" action="{{route('contacto.sende')}}" class="col-md-7 mx-auto form-contacto">
 			@csrf
 			<div class="row mb-3 justify-content-center">
 				<div class="col-md-5 form-group">

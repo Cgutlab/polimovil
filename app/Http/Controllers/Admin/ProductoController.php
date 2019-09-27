@@ -160,9 +160,8 @@ class ProductoController extends Controller
 
             $file_save = Helpers::saveImage($request->file('icon'), 'gallery');
             $file_save ? $file['icon'] = $file_save : false;
-
             $file_save = Helpers::saveImage($request->file('document'), 'producto_ficha');
-            $file_save ? $file['icon'] = $file_save : false;
+            $file_save ? $data['document'] = $file_save : false;
 
         $store = Producto::find($id);
         $store->fill($data);

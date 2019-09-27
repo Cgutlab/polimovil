@@ -29,10 +29,10 @@
 	<div class="pre-nav azul-principal" style="border-bottom: 1px solid #4dadd7;">
 		<div class="container d-flex  justify-content-between align-items-center">
 			<div class="d-flex align-items-center whatsapp_preHeader">			
-				<a href="https://wa.me/{{$tel_preheader->route}}" class="d-bloc mr-3" style="color: #fdfdfd; font-size: 16px; font-weight: 500;">
+				<a href="https://wa.me/{{$whatsapp2->route}}" class="d-bloc mr-3" style="color: #fdfdfd; font-size: 16px; font-weight: 500;">
 					<img src="{{asset('img/help/whatsappPrenav.png')}}" style="background-color: #00618a;" class="p-2"> 
+				{!! $whatsapp2->text !!}
 				</a>
-				{!! $tel_preheader->text !!}
 			</div>
 			<div class="d-flex align-items-center">
 				<form action="{{route('buscador.query')}}" method="get" style="max-width: 220px;">

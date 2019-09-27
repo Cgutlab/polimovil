@@ -9,6 +9,9 @@
 <div aria-label="breadcrumb" class="container mt-3">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{route('productos.fam')}}" style="font-weight: 500; color: #737373;">Productos</a></li>
+    @if($active->family_id != 0)
+    <li class="breadcrumb-item"><a href="{{route('productos.sub', ['id' => $active->id])}}" style="font-weight: 500; color: #737373;">{{$active->familia->title_es}}</a></li>
+    @endif
     <li class="breadcrumb-item active" aria-current="page" style="font-weight: 500; color: #737373;">
     	{{ $active->title_es }}
     </li>
@@ -22,7 +25,7 @@
 			@if($item->id_family == 0)
 			@php $key = '100'.$key; @endphp
 			    <li class="list-group-item border-0 px-0">
-			        <a href="{{ route('productos.cat', ['id' => $item->id]) }}" data-target="#categoria_{{$key}}" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center p-2 border-bottom" style="{{ $item->id == $active->id ? 'font-weight: 800;' : '' }}">
+			        <a href="{{ route('productos.cat', ['id' => $item->id]) }}" data-target="#categoria_{{$key}}" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center p-2 border-bottom" style="{{ $item->id == $active->family_id || $item->id == $active->id ? 'font-weight: 800;' : '' }}">
 			           <span onclick="location.href='{{ route('productos.cat', ['id' => $item->id]) }}'">{!! $item->title_es !!}</span><i class="fas fa-chevron-right ml-auto"></i>
 			        </a>
 			        <ul class="list-unstyled collapse {{ $item->id == $active->id ? 'show' : null }}" id="categoria_{{$key}}">
@@ -34,7 +37,7 @@
 			                    </a>
 			                    <ul class="list-unstyled" id="subcategoria_{{$k}}">
 			                        @forelse($data->producto as $art)
-			                            <li><a href="{{ route('productos.art',['id' => $art->id]) }}" class="px-3 py-2 @if(isset($producto)) {{$art->id == $producto->id ? 'distren-color': null }}@endif" style="{{ $data->id == $active->id ? 'font-weight: 800;' : '' }}">{{ $art->id. ' '.$art->title_es }}</a></li>
+			                            <li><a href="{{ route('productos.art',['id' => $art->id]) }}" class="px-3 py-2 @if(isset($producto)) {{$art->id == $producto->id ? 'distren-color': null }}@endif" style="">{{ $art->title_es }}</a></li>
 			                        @empty
 			                            {{-- <li>!!<a href="" class="p-2">No hay registros</a></li> --}}
 			                        @endforelse
@@ -76,22 +79,22 @@
 				</div>
 			</div>
 			@endforeach
-			@foreach($familias as $family)
-			@if($family->family_id == $active->family_id)
+			@foreach($xfamilias as $check)
+			@if($check->family_id == $active->id)
 			<div class="col-sm-12 col-md-4 mb-3" >
 				<div class="card w-100 mb-4" style="">				
 					<div class="position-relative mb-3">
-						@if(file_exists(public_path().'/img/producto_familia/'.$family->image))
-						<img class="img-fluid w-100" style="border: 1px solid #dadada;" src="{!!asset('img/producto_familia/'.$family->image)!!}">
+						@if(file_exists(public_path().'/img/producto_familia/'.$check->image))
+						<img class="img-fluid w-100" style="border: 1px solid #dadada;" src="{!!asset('img/producto_familia/'.$check->image)!!}">
 						@else
 						<img class="img-fluid w-100" style="border: 1px solid #dadada;" src="{!!asset('img/logo/'.$default->image)!!}">
 						@endif
 						<div class="position-absolute capa-product" style="">
-							<a href="{{route('productos.sub', ['id' => $family->id])}}"><i class="fas fa-plus"></i> ver más</a>
+							<a href="{{route('productos.sub', ['id' => $check->id])}}"><i class="fas fa-plus"></i> ver más</a>
 						</div>				
 					</div>
 					<p class="card-content editorRico blanco text-center">
-						{!!$family->title_es!!}
+						{!!$check->title_es!!}
 					</p>						
 				</div>
 			</div>

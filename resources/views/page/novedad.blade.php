@@ -32,10 +32,12 @@
 			<h3 style="color: #0088c7; font-weight: 600; margin-bottom: 15px;">{!! $active->title_es !!}</h3>
 			<div class="articulo-descripcion">{!!$active->text_es!!}</div>
 			<div>
-				<a href="" class="d-inline-block mt-3 mb-3" style="font-size: 20px; font-weight: 600;">
+				@if($active->file && $active->file != '')
+				<a href="{{asset('img/novedad_articulo/'. $active->file)}}" class="d-inline-block mt-3 mb-3" style="font-size: 20px; font-weight: 600;">
 					<img src="{{'/img/help/descarga.png'}}" alt="" class="img-fluid"> 
 					<span style="color: #3f5aa4; font-size: 18px; font-weight: 600;">Descagar</span> 
 				</a>
+				@endif
 			</div>			
 		</div>
 		<div class="col-sm-12 col-md-4 col-lg-3 novedades-sidebar">

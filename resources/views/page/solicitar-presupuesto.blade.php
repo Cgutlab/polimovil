@@ -11,8 +11,7 @@
 
 <div class="wrapper">
 
-<form action="solicitarPresupuesto" method="post" class="form-presupuesto pt-5 pb-5">
-
+<form action="{{route('presupuesto.sende')}}" method="post" class="form-presupuesto pt-5 pb-5">
 @csrf
 			<section id="content-form-i" class="mt-5 mb-5">
 
@@ -82,7 +81,7 @@
 
 					<div class="col-md-5">
 
-						<textarea class="form-control w-100 mb-3" placeholder="Mensaje" style="min-height: 100px; max-height: 100px;" name="" id="" cols="30" rows="10"></textarea>
+						<textarea class="form-control w-100 mb-3" placeholder="Mensaje" style="min-height: 100px; max-height: 100px;" name="mensaje" id="" cols="30" rows="10"></textarea>
 
 					</div>
 
@@ -97,8 +96,8 @@
 							</div>
 
 							<div class="col-sm-12 mb-5 mt-5">
-								<div class="g-recaptcha" data-sitekey="6Ldco1gUAAAAAKKt7QO7vSn4tkahcQuMBXAHTeRj"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Ldco1gUAAAAAKKt7QO7vSn4tkahcQuMBXAHTeRj&amp;co=aHR0cDovL3d3dy5ndWlmZXIuY29tLmFyOjgw&amp;hl=es&amp;v=v1566858990656&amp;size=normal&amp;cb=somcuyp80mww" role="presentation" name="a-z9hex7sll11l" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" width="304" height="78" frameborder="0"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
-                        <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/api2/v1566858990656/recaptcha__es.js"></script><script src="https://www.google.com/recaptcha/api.js?hl=es"></script>
+                        		<div class="g-recaptcha" data-sitekey="6Ldco1gUAAAAAKKt7QO7vSn4tkahcQuMBXAHTeRj"></div>
+                        		<script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
 							</div>
 							<div class="col-sm-12 col-md-5 mb-sm-3">
 

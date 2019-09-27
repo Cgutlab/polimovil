@@ -69,10 +69,10 @@ class FrontendController extends Controller
     {
         
         $active = Producto_familia::find($id);
-        $familias = Producto_familia::orderBy('order')->where('family_id', $active->id)->where('id', '<>', '0')->get();
+        $xfamilias = Producto_familia::orderBy('order')->where('id', '<>', '0')->get();
         $keypad = Producto_familia::orderBy('order')->where('id', '<>', 0)->where('family_id', '0')->get();
         $xproductos = Producto::orderBy('order')->where('family_id', $id)->get();
-        return view('page.subfamilias', compact('familias', 'xproductos', 'active', 'keypad'));
+        return view('page.subfamilias', compact('xfamilias', 'xproductos', 'active', 'keypad'));
     }
     
     public function productos_art($id)
@@ -171,15 +171,32 @@ class FrontendController extends Controller
         return view('page.presupuesto', compact('product'));
     }
 
-    public function sendContacto(ContactoRequest $request)
+    public function sendMailContacto(Request $request)
     {
         $data = array(['nombre'     => $request->get('nombre'),
                     'email'         => $request->get('email'),
                     'telefono'      => $request->get('telefono'),
                     'empresa'       => $request->get('empresa'),
                     'mensaje'       => $request->get('mensaje')]);
-        Mail::send('page.solicitud', $data[0], function($send){
-            $dato = Data::where('type', 'email')->first();
+        Mail::send('page.mail.contacto', $data[0], function($send){
+            $dato = Data::where('type', 'correo')->first();
+                $send->subject('Te han enviado un mensaje desde la web');
+                $send->to($dato->route);
+            }
+        );
+
+        return redirect()->back()->with('alert', '¡Gracias por contactarnos!');
+    }
+
+    public function sendMailPresupuesto(Request $request)
+    {
+        $data = array(['nombre'     => $request->get('nombre'),
+                    'email'         => $request->get('email'),
+                    'telefono'      => $request->get('telefono'),
+                    'empresa'       => $request->get('empresa'),
+                    'mensaje'       => $request->get('mensaje')]);
+        Mail::send('page.mail.presupuesto', $data[0], function($send){
+            $dato = Data::where('type', 'correo')->first();
                 $send->subject('Te han enviado un mensaje desde la web');
                 $send->to($dato->route);
             }

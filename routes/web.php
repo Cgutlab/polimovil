@@ -11,12 +11,14 @@
 |
 */
 
+Route::post('presupuesto/sende', ['uses' => 'Page\FrontendController@sendMailPresupuesto'])->name('presupuesto.sende');	
+Route::post('contacto/sende', ['uses' => 'Page\FrontendController@sendMailContacto'])->name('contacto.sende');	
+
 Route::group(['namespace' => 'Page'], function(){
 	Route::get('/', ['uses' => 'FrontendController@home'])->name('home');
 	Route::match(['get', 'post'] ,'buscador', ['uses' => 'FrontendController@index'])->name('buscador');
 	Route::match(['get', 'post'] ,'maquina/buscador', ['uses' => 'FrontendController@index'])->name('buscador');
 
-	Route::post('contacto/send', ['uses' => 'FrontendController@sendContacto'])->name('contacto.send');	
 	Route::get('buscador/query', 'FrontendController@buscador')->name('buscador.query');
 
 	Route::get('empresa', 'FrontendController@empresa')->name('empresa');
