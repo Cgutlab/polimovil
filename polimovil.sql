@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2019 a las 23:38:06
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.8
+-- Tiempo de generación: 27-09-2019 a las 05:51:35
+-- Versión del servidor: 10.1.36-MariaDB
+-- Versión de PHP: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,12 +30,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admins` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci,
   `username` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` enum('user','admin') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'admin',
   `status` enum('on','off') COLLATE utf8mb4_unicode_ci DEFAULT 'on',
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` text COLLATE utf8mb4_unicode_ci,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -57,15 +57,15 @@ INSERT INTO `admins` (`id`, `name`, `username`, `type`, `status`, `email_verifie
 
 CREATE TABLE `contents` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `section` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subtitle_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image1` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image2` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image3` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `section` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
+  `type` text COLLATE utf8mb4_unicode_ci,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `subtitle_es` text COLLATE utf8mb4_unicode_ci,
+  `text_es` text COLLATE utf8mb4_unicode_ci,
+  `image1` text COLLATE utf8mb4_unicode_ci,
+  `image2` text COLLATE utf8mb4_unicode_ci,
+  `image3` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -87,9 +87,9 @@ INSERT INTO `contents` (`id`, `section`, `order`, `type`, `title_es`, `subtitle_
 
 CREATE TABLE `data` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `type` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `route` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` text COLLATE utf8mb4_unicode_ci,
+  `text` text COLLATE utf8mb4_unicode_ci,
+  `route` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -101,7 +101,7 @@ CREATE TABLE `data` (
 INSERT INTO `data` (`id`, `type`, `text`, `route`, `created_at`, `updated_at`) VALUES
 (1, 'direccion', '<p>Tres Arroyos 262, C1414EAD, Ciudad Aut&oacute;noma de Buenos Aires</p>', 'Tres Arroyos 262, C1414EAD, Ciudad Autónoma de Buenos Aires', NULL, '2019-09-11 04:11:41'),
 (2, 'telefono1', '<p>(011) 4854-2564</p>', '01148542564', NULL, '2019-09-11 04:11:57'),
-(3, 'correo', '<p>info@polimovilruedas.com.ar</p>', 'info@polimovilruedas.com.ar', NULL, '2019-09-11 04:12:08'),
+(3, 'correo', '<p>info@polimovilruedas.com.ar</p>', 'info@polimovilruedas.com.ar', NULL, '2019-09-27 06:49:37'),
 (4, 'whatsappFlotante', '15-2188-1903', '1521881903', NULL, '2019-09-11 04:12:15'),
 (5, 'telefono2', '<p>(011) 4856-7266</p>', '01148567266', NULL, '2019-09-11 04:12:34'),
 (6, 'whatsapp', '<p>Whats App 15-2188-1903</p>', '1521881903', NULL, '2019-09-11 04:12:48'),
@@ -117,10 +117,10 @@ INSERT INTO `data` (`id`, `type`, `text`, `route`, `created_at`, `updated_at`) V
 
 CREATE TABLE `descargas` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
+  `file` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -140,8 +140,8 @@ INSERT INTO `descargas` (`id`, `image`, `title_es`, `order`, `file`, `created_at
 
 CREATE TABLE `logos` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `type` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` text COLLATE utf8mb4_unicode_ci,
+  `image` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -164,9 +164,9 @@ INSERT INTO `logos` (`id`, `type`, `image`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `metadata` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `section` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keyword_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `section` text COLLATE utf8mb4_unicode_ci,
+  `keyword_es` text COLLATE utf8mb4_unicode_ci,
+  `description_es` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -224,12 +224,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `novedad_articulos` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `extract_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subtitle_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `extract_es` text COLLATE utf8mb4_unicode_ci,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `subtitle_es` text COLLATE utf8mb4_unicode_ci,
+  `text_es` text COLLATE utf8mb4_unicode_ci,
+  `file` text COLLATE utf8mb4_unicode_ci,
   `novedad_id` bigint(20) UNSIGNED DEFAULT NULL,
   `order` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -253,8 +253,8 @@ INSERT INTO `novedad_articulos` (`id`, `image`, `extract_es`, `title_es`, `subti
 
 CREATE TABLE `novedad_categorias` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -276,14 +276,14 @@ INSERT INTO `novedad_categorias` (`id`, `title_es`, `order`, `created_at`, `upda
 
 CREATE TABLE `productos` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `document` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `outstanding` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `keyword_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `document` text COLLATE utf8mb4_unicode_ci,
+  `code` text COLLATE utf8mb4_unicode_ci,
+  `text_es` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
+  `outstanding` text COLLATE utf8mb4_unicode_ci,
+  `file` text COLLATE utf8mb4_unicode_ci,
+  `keyword_es` text COLLATE utf8mb4_unicode_ci,
   `family_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -307,10 +307,10 @@ INSERT INTO `productos` (`id`, `title_es`, `document`, `code`, `text_es`, `order
 
 CREATE TABLE `producto_familias` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `level` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
+  `level` text COLLATE utf8mb4_unicode_ci,
   `family_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -346,8 +346,8 @@ INSERT INTO `producto_familias` (`id`, `image`, `title_es`, `order`, `level`, `f
 
 CREATE TABLE `producto_imagens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
   `product_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -371,9 +371,9 @@ INSERT INTO `producto_imagens` (`id`, `image`, `order`, `product_id`, `created_a
 
 CREATE TABLE `reds` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `route` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `route` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -394,13 +394,13 @@ INSERT INTO `reds` (`id`, `image`, `route`, `order`, `created_at`, `updated_at`)
 
 CREATE TABLE `sliders` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `section` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subtitle_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
+  `section` text COLLATE utf8mb4_unicode_ci,
+  `type` text COLLATE utf8mb4_unicode_ci,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `text_es` text COLLATE utf8mb4_unicode_ci,
+  `subtitle_es` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -421,10 +421,10 @@ INSERT INTO `sliders` (`id`, `image`, `order`, `section`, `type`, `title_es`, `t
 
 CREATE TABLE `usos` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text_es` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `outstanding` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_es` text COLLATE utf8mb4_unicode_ci,
+  `text_es` text COLLATE utf8mb4_unicode_ci,
+  `order` text COLLATE utf8mb4_unicode_ci,
+  `outstanding` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -451,8 +451,8 @@ INSERT INTO `usos` (`id`, `title_es`, `text_es`, `order`, `outstanding`, `create
 
 CREATE TABLE `uso_imagens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `orden` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `orden` text COLLATE utf8mb4_unicode_ci,
   `uso_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
