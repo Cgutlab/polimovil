@@ -22,37 +22,44 @@
 	<div class="row align-items-start rOrderMovil">
 		<div class="col-sm-12 col-md-4 col-lg-3">
 			<ul class="list-unstyled">
-			@forelse($keypad as $key=>$item)
-			@if($item->id_family == 0)
-			@php $key = '100'.$key; @endphp
+			@foreach($keypad as $key=>$item)
+			@if($item->family_id == 0)
+			@php $key = 'A'.$key; @endphp
 			    <li class="list-group-item border-0 px-0">
 			        <a href="{{ route('productos.cat', ['id' => $item->id]) }}" data-target="#categoria_{{$key}}" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center p-2 border-bottom" style="{{ $item->id == $active->family->family_id ? 'font-weight: 800;' : '' }}">
 			           <span onclick="location.href='{{ route('productos.cat', ['id' => $item->id]) }}'">{!! $item->title_es !!}</span><i class="fas fa-chevron-right ml-auto"></i>
 			        </a>
 			        <ul class="list-unstyled collapse {{ $item->id == $active->id ? 'show' : null }}" id="categoria_{{$key}}">
-			            @forelse($item->familias as $k=>$data)
-			            @php $k = '200'.$k; @endphp
+			            @foreach($item->familias as $k=>$data)
+			            @php $k = 'B'.$k; @endphp
 			                <li class="list-group-item border-0 px-3" style="font-size: 14px">
 			                    <a href="{{ route('productos.sub', ['id' => $data->id]) }}" data-target="#subcategoria_{{$k}}" data-toggle="collapse" aria-expanded="false" class="d-flex align-items-center p-2 border-bottom " style="{{ $data->id == $active->family_id ? 'font-weight: 800;' : '' }}">
 			                        <span onclick="location.href='{{ route('productos.sub', ['id' => $data->id]) }}'">{!! $data->title_es !!}</span><i class="fas fa-chevron-right ml-auto"></i>
 			                    </a>
 			                    <ul class="list-unstyled" id="subcategoria_{{$k}}">
-			                        @forelse($data->producto as $art)
-			                            <li><a href="{{ route('productos.art',['id' => $art->id]) }}" class="px-3 py-2 @if(isset($producto)) {{$art->id == $producto->id ? 'distren-color': null }}@endif" style="{{ $art->id == $active->id ? 'font-weight: 800;' : '' }}">{{ $art->title_es }}</a></li>
-			                        @empty
-			                            {{-- <li>!!<a href="" class="p-2">No hay registros</a></li> --}}
-			                        @endforelse
+			                        @foreach($data->producto as $art)
+			                            <li>
+			                            	<a href="{{ route('productos.art',['id' => $art->id]) }}" class="px-3 py-2 @if(isset($producto)) {{$art->id == $producto->id ? 'distren-color': null }}@endif" style="{{ $art->id == $active->id ? 'font-weight: 800;' : '' }}">
+			                            		{{ $art->title_es }}
+			                            	</a>
+			                            </li>
+			                        @endforeach
 			                    </ul>
 			                </li>
-			            @empty
-			                {{-- <li><a href="" class="p-2">No hay registros</a></li> --}}
-			            @endforelse
+			            @endforeach
 			        </ul>
+			        <ul class="list-unstyled">
+	                @foreach($item->producto as $art)
+	                    <li>
+	                    	<a href="{{ route('productos.art',['id' => $art->id]) }}" class="px-3 py-2 @if(isset($producto)) {{$art->id == $producto->id ? 'distren-color': null }}@endif" style="{{ $art->id == $active->id ? 'font-weight: 800;' : '' }}">
+	                    		{{ $art->title_es }}
+	                    	</a>
+	                    </li>
+	                @endforeach
+	            </ul>
 			    </li>
 			@endif
-			@empty
-			    {{-- <li>#<a href="" class="p-2">No hay registros</a></li> --}}
-			@endforelse
+			@endforeach
 			</ul>
 		</div>
 		<div class="col-sm-12 col-md-8 col-lg-9">
@@ -100,7 +107,7 @@
 												@endforeach
 												
 												<div class="position-absolute capa-product" style="">
-													<a href=""><i class="fas fa-plus"></i> ver más</a>
+													<a href="{{ route('productos.art',['id' => $article->id]) }}"><i class="fas fa-plus"></i> ver más</a>
 												</div>
 											</div>
 											<p class="card-content editorRico blanco text-center" style="font-size: 16px;">

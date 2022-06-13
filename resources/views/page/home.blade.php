@@ -19,7 +19,7 @@
 			@php $count++; @endphp
 			@if($count == 1)
 				<div class="carousel-item active">
-					<img src="{!!asset('img/slider/'.$sd->image)!!}">
+					<img src="{!!asset('img/slider/'.$sd->image)!!}" class="w-100">
 					<div class="carousel-caption d-none d-md-block">
 						<h1 style="color: #33509e;">{!!$sd->text_es!!}</h1>
 					</div>
